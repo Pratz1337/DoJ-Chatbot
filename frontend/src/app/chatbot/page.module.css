@@ -65,3 +65,30 @@
     #a8d8a5
   ); /* Slightly darker gradient on hover */
 }
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+}
+
+.heading {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.heading:nth-child(1) {
+  color: blue;
+}
+
+.heading:nth-child(2) {
+  color: purple;
+}
+
+.heading:nth-child(3) {
+  color: lime;
+}
+  
