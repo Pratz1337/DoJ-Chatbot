@@ -53,13 +53,17 @@ def CaseModel(id, html_file_path):
     except Exception as e:
         return {"res": {"msg": f"Error reading HTML file: {str(e)}"}, "info": "File read error"}
 
-    # Step 2: Extract important information using BeautifulSoup
+    # Step 2: Check if the HTML content contains "RECORD NOT FOUND"
+    if "Record not found" in html_content:
+        return {"res": {"msg": "RECORD NOT FOUND"}, "info": "RECORD NOT FOUND"}
+
+    # Step 3: Extract important information using BeautifulSoup
     important_info = extract_important_info_from_html(html_content)
 
-    # Step 3: Use the LLM (LangChain) to further process the extracted information
+    # Step 4: Use the LLM (LangChain) to further process the extracted information
     result = chain.run(html_content=important_info)
 
-    # Step 4: Format the response
+    # Step 5: Format the response
     msg = result.replace("* **", "\n\n").replace(":**", ":").replace("\n", "\n\n")  # Ensure points start on new lines
 
     return {"res": {"msg": msg}, "info": important_info}
