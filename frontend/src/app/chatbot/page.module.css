@@ -1,0 +1,67 @@
+
+
+
+/* Input Field */
+.inputField {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border: none;
+  transition: all 0.3s ease;
+}
+.inputField:focus {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Send Button */
+.sendButton {
+  background-color: #6200ea;
+  color: white;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.sendButton:hover {
+  transform: scale(1.05);
+}
+
+/* Info Card */
+.infoCard {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+.infoCard:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Tab Trigger */
+.tabTrigger {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 0.5rem;
+  transition: background 0.3s ease;
+}
+.tabTrigger:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.tabTrigger {
+  margin: 2px;
+  border: 2px solid rgba(0, 0, 0, 0.3); /* Adjust border color as needed */
+  background: linear-gradient(
+    135deg,
+    #a4d7e1,
+    #c1e1c1
+  ); /* Light blue to light green gradient */
+  border-radius: 0.5rem; /* Optional: Rounded corners */
+  padding: 10px; /* Padding for better spacing */
+  transition: background 0.3s; /* Smooth transition for hover effect */
+}
+
+.tabTrigger:hover {
+  background: linear-gradient(
+    135deg,
+    #8bc4d5,
+    #a8d8a5
+  ); /* Slightly darker gradient on hover */
+}
