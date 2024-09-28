@@ -9,31 +9,21 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Scale, FileText, Sun, Moon } from "lucide-react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import LegalResources from './LegalResources'
+import LegalResources from "./LegalResources";
 import styles from "./page.module.css";
 import ConversationSummary from "./ConversationSummary"; // Adjust the import path as needed
 import Quiz from "./Quiz"; // Adjust the import path as needed
+import ReactMarkdown from "react-markdown"; // Import React Markdown
 
 const renderMessageContent = (content: any): JSX.Element => {
   if (typeof content === "string") {
-    const lines = content.split("\n").map((line, index) => {
-      if (line.startsWith("**") && line.endsWith("**")) {
-        const heading = line.replace(/\*\*/g, ""); // Remove the asterisks
-        return (
-          <h3 key={index} className="font-bold">
-            {heading}
-          </h3>
-        );
-      }
-      return <p key={index}>{line}</p>;
-    });
-    return <div>{lines}</div>;
+    return <ReactMarkdown>{content}</ReactMarkdown>; // Render content using ReactMarkdown
   } else if (Array.isArray(content)) {
     return (
       <ul>
         {content.map((item, index) => (
           <li key={index}>{renderMessageContent(item)}</li>
-        ))} 
+        ))}
       </ul>
     );
   } else if (typeof content === "object" && content !== null) {
@@ -51,14 +41,12 @@ const renderMessageContent = (content: any): JSX.Element => {
   return <p>{String(content)}</p>;
 };
 
-
-
-
 export default function ChatbotInterface() {
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      content: "Welcome to the Department of Justice AI Assistant. How can I help you today?",
+      content:
+        "Welcome to the Department of Justice AI Assistant. How can I help you today?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -94,18 +82,22 @@ export default function ChatbotInterface() {
     return () => clearInterval(intervalId);
   }, []);
   const [conversationHistory, setConversationHistory] = useState<
-  Array<{ user: string; bot: string }>
->([]);
+    Array<{ user: string; bot: string }>
+  >([]);
 
   useEffect(() => {
     if (showLegalResources) {
-      animateCount(65361, 2000, 'count1');
-      animateCount(17813, 2000, 'count2');
-      animateCount(83174, 2000, 'count3');
+      animateCount(65361, 2000, "count1");
+      animateCount(17813, 2000, "count2");
+      animateCount(83174, 2000, "count3");
     }
   }, [showLegalResources]);
 
-  const animateCount = (target: number, duration: number, elementId: string) => {
+  const animateCount = (
+    target: number,
+    duration: number,
+    elementId: string
+  ) => {
     const start = 0;
     const end = target;
     const increment = Math.ceil(end / (duration / 100));
