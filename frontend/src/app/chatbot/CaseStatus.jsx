@@ -38,7 +38,7 @@ function CaseStatusChecker() {
       
       {llmResponse && (
         <div>
-          <h3>LLM Generated Response:</h3>
+          
           <pre style={{ whiteSpace: 'pre-wrap', backgroundColor: '#f0f0f0', padding: '10px', borderRadius: '5px' }}>
             {llmResponse}
           </pre>

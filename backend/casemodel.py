@@ -17,12 +17,12 @@ llm = ChatGoogleGenerativeAI(
 )
 
 # Define the prompt template
-prompt_template = """Extract important information from the following HTML content:
+prompt_template = """Extract important information from the following HTML content,DONT PRETTIFY THINGS JUST PUT WITH NEW LINES ALSO DONT PUT CASE DETAILS DIRECTLY START FROM CASE STATUS AND USE LESS WHITESPACE:
 
 HTML:
 {html_content}
 
-Important Information:"""
+Information:"""
 
 prompt = PromptTemplate(template=prompt_template, input_variables=["html_content"])
 chain = LLMChain(llm=llm, prompt=prompt)
