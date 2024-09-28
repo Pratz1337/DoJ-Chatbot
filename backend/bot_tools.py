@@ -6,7 +6,7 @@ import requests
 client = pymongo.MongoClient("mongodb+srv://ice:9EUFPlE499todrIr@doj.y9b1r.mongodb.net/?retryWrites=true&w=majority&appName=DOJ")
 db = client["DojChatbot"]
 @tool
-def check_case(CNR: str) -> str:
+def check_case_with_CNR(CNR: str) -> str:
     '''Return information about a currntly active or disposed off case from the offical source by taking CNR or case number as input. Use this when user wants information about a particular case and ask to provide CNR number of that case'''
     data = {
         'cino': CNR
