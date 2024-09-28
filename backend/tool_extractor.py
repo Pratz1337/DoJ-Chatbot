@@ -11,7 +11,6 @@ from bot_tools import (
     get_instituted_current_year_cases,
     get_coram_wise_pending_cases,
     get_cases_info,
-    get_ac_info,
     get_case_statistics,
     get_traffic_violation_payments,
     get_judicial_system_and_vacancies,
@@ -25,7 +24,7 @@ from bot_tools import (
     get_court_live_stream_info,
     get_rti_and_financial_assistance_info,
     get_judicial_reform_info,
-    search_judicial_appointments
+    search_judicial_appointments,check_case_with_CNR
 )
 
 def get_tool_info(tool_name: str):
@@ -41,7 +40,6 @@ def get_tool_info(tool_name: str):
         get_instituted_current_year_cases,
         get_coram_wise_pending_cases,
         get_cases_info,
-        get_ac_info,
         get_case_statistics,
         get_traffic_violation_payments,
         get_judicial_system_and_vacancies,
@@ -56,7 +54,8 @@ def get_tool_info(tool_name: str):
         get_free_legal_aid_info,
         get_rti_and_financial_assistance_info,
         get_judicial_reform_info,
-        search_judicial_appointments
+        search_judicial_appointments,
+        check_case_with_CNR
     ]
 
     # Iterate through the tool functions to find the specific tool
