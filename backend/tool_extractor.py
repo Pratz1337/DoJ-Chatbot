@@ -24,7 +24,7 @@ from bot_tools import (
     get_court_live_stream_info,
     get_rti_and_financial_assistance_info,
     get_judicial_reform_info,
-    search_judicial_appointments,check_case_with_CNR
+    search_judicial_appointments
 )
 
 def get_tool_info(tool_name: str):
@@ -55,7 +55,6 @@ def get_tool_info(tool_name: str):
         get_rti_and_financial_assistance_info,
         get_judicial_reform_info,
         search_judicial_appointments,
-        check_case_with_CNR
     ]
 
     # Iterate through the tool functions to find the specific tool

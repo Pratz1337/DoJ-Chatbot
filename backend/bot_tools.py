@@ -2,24 +2,13 @@ import pymongo
 from langchain_core.tools import tool
 import requests
 from langchain.document_loaders import UnstructuredHTMLLoader
-
+from urllib.parse import quote
 # MongoDB connection
 
 client = pymongo.MongoClient("mongodb+srv://ice:9EUFPlE499todrIr@doj.y9b1r.mongodb.net/?retryWrites=true&w=majority&appName=DOJ")
 db = client["DojChatbot"]
-@tool
-def check_case_with_CNR(CNR: str) -> str:
-    '''Return information about a currntly active or disposed off case from the offical source by taking CNR or case number as input. Use this when user wants information about a particular case and ask to provide CNR number of that case'''
-    data = {
-        'cino': CNR
-    }
-    print(data)
-    r = requests.post('https://services.ecourts.gov.in/ecourtindia_v6/?p=cnr_status/searchByCNR/', data=data)
-    with open("casereport.html", "w") as file:
-        file.write(r.text)
-    loader = UnstructuredHTMLLoader("casereport.html")
-    data = loader.load()
-    return data
+
+
 @tool
 def get_disposal_last_month_cases() -> dict:
     """Retrieve information about cases disposed of in the last month."""

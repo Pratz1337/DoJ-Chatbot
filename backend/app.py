@@ -7,7 +7,8 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, ListFlowabl
 from reportlab.lib.units import inch
 from reportlab.lib.colors import HexColor
 from io import BytesIO
-
+import requests
+from bs4 import BeautifulSoup
 from chat_model import ChatModel
 from keyword_map import find_tool_based_on_query
 from tool_extractor import get_tool_info
@@ -258,6 +259,51 @@ def download_summary():
     # Prepare the response
     buffer.seek(0)
     return send_file(buffer, as_attachment=True, download_name='lawgpt_conversation_summary.pdf', mimetype='application/pdf')
+
+
+# Configure logging
+
+from casemodel import CaseModel  # Import the updated ChatModel
+
+@app.route('/check-case-status', methods=['POST'])
+def check_case_status():
+    data = request.get_json()
+    cino = data.get('cino')
+
+    if not cino:
+        return jsonify({"error": "CINO is required"}), 400
+
+    try:
+        url = 'https://services.ecourts.gov.in/ecourtindia_v6/?p=cnr_status/searchByCNR/'
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+        response_data = {'cino': cino}
+        
+        response = requests.post(url, headers=headers, data=response_data)
+        
+        if response.status_code == 200:
+            # Parse and process the HTML content using the updated ChatModel
+            chat_model_response = CaseModel(cino, response.text)
+
+            # Get the final message from the ChatModel
+            final_output = chat_model_response['res']['msg']
+
+            # Print and return all information from the LLM
+            return jsonify({
+                "extracted_info": chat_model_response['info'],
+                "llm_response": final_output
+            }), 200
+        
+        else:
+            return jsonify({"error": "Failed to fetch case details"}), 500
+    
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+   
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)

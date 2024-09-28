@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import LegalResources from "./LegalResources";
 import styles from "./page.module.css";
 import ConversationSummary from "./ConversationSummary"; // Adjust the import path as needed
-import Quiz from "./Quiz"; // Adjust the import path as needed
+import CaseStatusChecker from "./CaseStatus";
 import ReactMarkdown from "react-markdown"; // Import React Markdown
 
 const renderMessageContent = (content: any): JSX.Element => {
@@ -331,7 +331,7 @@ export default function ChatbotInterface() {
 
               <TabsContent value="rights-awareness">
                 <h2 className="text-xl font-semibold mb-2">Know Your Rights</h2>
-                <Quiz isDarkMode={isDarkMode} />
+                <CaseStatusChecker/>
               </TabsContent>
 
               <TabsContent value="legal-resources">
