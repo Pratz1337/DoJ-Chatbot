@@ -49,6 +49,8 @@ export default function CaseStatusChecker({ isDarkMode }: CaseStatusCheckerProps
           onChange={(e) => setCino(e.target.value)}
           placeholder="Enter CNR NUMBER"
           required
+          maxLength={16}
+          minLength={16}
           className={`w-full rounded-lg ${isDarkMode ? 'bg-gray-700 text-black' : 'bg-white text-gray-800'}`}
         />
         <Button 
