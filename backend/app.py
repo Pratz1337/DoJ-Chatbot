@@ -284,10 +284,15 @@ def check_case_status():
         response = requests.post(url, headers=headers, data=response_data)
         
         if response.status_code == 200:
-            # Parse and process the HTML content using the updated ChatModel
-            chat_model_response = CaseModel(cino, response.text)
+            # Save the HTML content to a file
+            html_file_path = f"saved_responses/{cino}.html"
+            with open(html_file_path, 'w', encoding='utf-8') as file:
+                file.write(response.text)
+            
+            # Parse and process the HTML content using the updated CaseModel
+            chat_model_response = CaseModel(cino, html_file_path)
 
-            # Get the final message from the ChatModel
+            # Get the final message from the CaseModel
             final_output = chat_model_response['res']['msg']
 
             # Print and return all information from the LLM
@@ -301,9 +306,6 @@ def check_case_status():
     
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-
-   
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)

@@ -43,16 +43,23 @@ def extract_important_info_from_html(html_content: str):
     important_info = f"Title: {title}\nDescription: {description}\nHeaders: {headers}\nParagraphs: {paragraphs}"
     return important_info
 
-def CaseModel(id, html_content):
+def CaseModel(id, html_file_path):
     config = {"configurable": {"thread_id": id}}
 
-    # Step 1: Extract important information using BeautifulSoup
+    # Step 1: Read the HTML content from the file
+    try:
+        with open(html_file_path, 'r', encoding='utf-8') as file:
+            html_content = file.read()
+    except Exception as e:
+        return {"res": {"msg": f"Error reading HTML file: {str(e)}"}, "info": "File read error"}
+
+    # Step 2: Extract important information using BeautifulSoup
     important_info = extract_important_info_from_html(html_content)
 
-    # Step 2: Use the LLM (LangChain) to further process the extracted information
+    # Step 3: Use the LLM (LangChain) to further process the extracted information
     result = chain.run(html_content=important_info)
 
-    # Step 3: Format the response
+    # Step 4: Format the response
     msg = result.replace("* **", "\n\n").replace(":**", ":").replace("\n", "\n\n")  # Ensure points start on new lines
 
     return {"res": {"msg": msg}, "info": important_info}
