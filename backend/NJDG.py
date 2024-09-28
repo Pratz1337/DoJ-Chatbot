@@ -246,7 +246,7 @@ output_data = {
     "Registered and Unregistered Cases" : data_list
 }
 
-with open('ac_info.json', 'w') as file:
+with open('cases_info.json', 'w') as file:
     json.dump(output_data, file, indent=4)
 
 # Save table1_data to CSV
@@ -299,7 +299,7 @@ for csv_file in csv_files:
     json_file = os.path.splitext(csv_file)[0] + '.json'
     csv_to_json(csv_file, json_file)
 
-def push_json_to_mongodb(file_paths):
+def push_json_to_mongodb():
     # MongoDB connection string
     connection_string = "mongodb+srv://ice:9EUFPlE499todrIr@doj.y9b1r.mongodb.net/?retryWrites=true&w=majority&appName=DOJ"
 
@@ -308,41 +308,39 @@ def push_json_to_mongodb(file_paths):
 
     # Select the database and collection
     db = client.DojChatbot
-    collection = db.case_pendency.Documents
-
-    # Iterate over each file and insert its content
-    for file_path in file_paths:
-        try:
-            with open(file_path, 'r') as file:
-                # Load JSON data
-                data = json.load(file)
-                
-                # Check if the JSON data is a list (array of documents) or a single document
-                if isinstance(data, list):
-                    # Insert each document in the list
-                    collection.insert_many(data)
-                    print(f"Inserted list of documents from {file_path} successfully.")
-                elif isinstance(data, dict):
-                    # Insert single document
-                    collection.insert_one(data)
-                    print(f"Inserted document from {file_path} successfully.")
-                else:
-                    print(f"File {file_path} contains unsupported data structure.")
-        except Exception as e:
-            print(f"An error occurred while inserting data from {file_path}: {e}")
-
-# List of file paths
-file_paths = [
-    'disposal_last_month_cases.json',
-    'instituted_last_month_cases.json',
-    'instituted_current_year.json',
-    'coram_wise_pending_cases_table1.json',
-    'coram_wise_pending_cases_table2.json',
-    'ac_info.json'
+    collection_names = [
+    'disposal_last_month_cases', 'instituted_last_month_cases', 'instituted_current_year',
+    'coram_wise_pending_cases_table1', 'coram_wise_pending_cases_table2',
+    'cases_info'
 ]
 
-# Call the function to push the data
-push_json_to_mongodb(file_paths)
+# Database instance
+
+    # List of JSON files to be read and inserted
+    json_files = [
+        'disposal_last_month_cases.json', 'instituted_last_month_cases.json', 'instituted_current_year.json',
+        'coram_wise_pending_cases_table1.json', 'coram_wise_pending_cases_table2.json',
+        'cases_info.json'
+    ]
+
+    # Insert data from each JSON file into corresponding collections
+    for file_name, collection_name in zip(json_files, collection_names):
+        # Read the JSON data
+        with open(file_name, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+        
+        # Insert data into MongoDB collection
+        collection = db[collection_name]
+        if isinstance(data, list):  # If the data is a list of dictionaries
+            collection.insert_many(data)
+        else:  # If the data is a dictionary
+            collection.insert_one(data)
+        
+        print(f"Data from '{file_name}' inserted into '{collection_name}' collection.")
+
+    print("All JSON data has been successfully inserted into MongoDB.")
+
+push_json_to_mongodb()
 
 print("Scraping complete! Data saved to 'cases_info.txt' and CSV files.")
 
