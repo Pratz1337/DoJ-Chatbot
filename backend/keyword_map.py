@@ -13,8 +13,10 @@ def find_tool_based_on_query(user_query):
 
     # Extract the keyword from the Gemini response
     selected_keyword = response.content.strip()
-    print("Response from Gemini: ", selected_keyword)
-
+    if selected_keyword[0]=="*":
+        selected_keyword=selected_keyword[1:-1]
+    print("Tool being used: ", keyword_tool_map[selected_keyword])
+    
     # Check if the selected keyword exists in the keyword_tool_map
     if selected_keyword in keyword_tool_map:
         return keyword_tool_map[selected_keyword]  # Return the associated tool name
@@ -108,7 +110,29 @@ keyword_tool_map = {
     "department of justice tasks": "get_doj_functions_responsibilities",
     "doj mission and functions": "get_doj_functions_responsibilities",
     "justice ministry responsibilities": "get_doj_functions_responsibilities",
-
+    # check_case_with_CNR
+    "case status by CNR": "check_case_with_CNR",
+    "find case by CNR": "check_case_with_CNR",
+    "track case by CNR number": "check_case_with_CNR",
+    "case information by CNR number": "check_case_with_CNR",
+    "case details using CNR": "check_case_with_CNR",
+    "CNR case search": "check_case_with_CNR",
+    "case status search by CNR": "check_case_with_CNR",
+    "CNR number lookup": "check_case_with_CNR",
+    "check CNR case status": "check_case_with_CNR",
+    "track case status with CNR": "check_case_with_CNR",
+    "find case details by CNR": "check_case_with_CNR",
+    "get case status using CNR": "check_case_with_CNR",
+    "CNR case tracking": "check_case_with_CNR",
+    "search case details by CNR number": "check_case_with_CNR",
+    "search case by CNR number": "check_case_with_CNR",
+    "track case using CNR number": "check_case_with_CNR",
+    "check legal case with CNR": "check_case_with_CNR",
+    "CNR case info": "check_case_with_CNR",
+    "find legal case by CNR": "check_case_with_CNR",
+    "legal case search by CNR": "check_case_with_CNR",
+    "track legal case status by CNR": "check_case_with_CNR",
+    "check case information using CNR": "check_case_with_CNR",
     # get_free_legal_aid_info
     "free legal support": "get_free_legal_aid_info",
     "legal aid options": "get_free_legal_aid_info",
@@ -225,6 +249,8 @@ keyword_tool_map = {
     "current year case filing data": "get_instituted_current_year_cases",
     "yearly new court case statistics": "get_instituted_current_year_cases",
     "this year's instituted legal matters": "get_instituted_current_year_cases",
+    "cases instituted this month": "get_instituted_current_year_cases",
+
 
     # get_coram_wise_pending_cases
     "pending cases by coram": "get_coram_wise_pending_cases",
@@ -270,22 +296,22 @@ keyword_tool_map = {
     "case hearing updates": "get_cases_info",
     "litigation status reports": "get_cases_info",
 
-    # get_ac_info
-    "assistant counsel information": "get_ac_info",
-    "assistant counsel duties": "get_ac_info",
-    "pending civil cases": "get_ac_info",
-    "pending criminal cases": "get_ac_info",
-    "ac responsibilities": "get_ac_info",
-    "assistant counsel roles": "get_ac_info",
-    "ac case assignments": "get_ac_info",
-    "assistant legal counsel info": "get_ac_info",
-    "ac workload details": "get_ac_info",
-    "assistant counsel case management": "get_ac_info",
-    "ac legal support information": "get_ac_info",
-    "assistant counsel performance metrics": "get_ac_info",
-    "ac case resolution stats": "get_ac_info",
-    "assistant counsel expertise areas": "get_ac_info",
-    "ac litigation support details": "get_ac_info",
+    # get_cases_info
+    "assistant counsel information": "get_cases_info",
+    "assistant counsel duties": "get_cases_info",
+    "pending civil cases": "get_cases_info",
+    "pending criminal cases": "get_cases_info",
+    "ac responsibilities": "get_cases_info",
+    "assistant counsel roles": "get_cases_info",
+    "ac case assignments": "get_cases_info",
+    "assistant legal counsel info": "get_cases_info",
+    "ac workload details": "get_cases_info",
+    "assistant counsel case management": "get_cases_info",
+    "ac legal support information": "get_cases_info",
+    "assistant counsel performance metrics": "get_cases_info",
+    "ac case resolution stats": "get_cases_info",
+    "assistant counsel expertise areas": "get_cases_info",
+    "ac litigation support details": "get_cases_info",
         # get_case_statistics
     "case statistics": "get_case_statistics",
     "general case statistics": "get_case_statistics",
@@ -558,8 +584,8 @@ keyword_tool_map = {
     "judicial system overview": "get_judicial_system_and_vacancies",
     "traffic violation fines": "get_traffic_violation_payments",
     "statistical data on cases": "get_case_statistics",
-    "assistant counsel responsibilities": "get_ac_info",
-    "roles of assistant counsels": "get_ac_info",
+    "assistant counsel responsibilities": "get_cases_info",
+    "roles of assistant counsels": "get_cases_info",
     "judicial reforms": "get_judicial_reform_info",
     "specific case details": "get_cases_info",
     "case progress": "get_cases_info",
