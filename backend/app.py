@@ -35,6 +35,40 @@ summary_llm = ChatGoogleGenerativeAI(
 def home():
     return "Welcome to the Department of Justice Chatbot!"
 
+def clean_summary(raw_summary):
+    # Replace headings '##' with a formatted title
+    clean_text = re.sub(r"##\s*(.+)", r"\1\n", raw_summary)
+
+    # Replace bold '**' with normal text
+    clean_text = re.sub(r"\*\*(.+?)\*\*", r"\1", clean_text)
+
+    # Replace bullet points '*' with '-' (optional) or leave them out for cleaner text
+    clean_text = re.sub(r"\*\s*", "- ", clean_text)
+
+    return clean_text
+
+def format_summary_for_chat(summary):
+    summary = clean_summary(summary)
+    lines = summary.split('\n')
+    formatted_content = []
+    
+    for line in lines:
+        stripped_line = line.strip()
+        if not stripped_line:
+            continue
+        
+        if stripped_line.endswith(':'):
+            if len(stripped_line) > 30:  # Longer lines as main headings
+                formatted_content.append(f"\n### {stripped_line}\n")
+            else:
+                formatted_content.append(f"\n#### {stripped_line}\n")
+        elif stripped_line.startswith('•') or stripped_line.startswith('-'):
+            formatted_content.append(f"- {stripped_line[1:].strip()}")
+        else:
+            formatted_content.append(stripped_line)
+
+    return "\n".join(formatted_content)
+
 @app.route('/chat', methods=['GET', 'POST'])
 def chat():
     if request.method == 'GET':
@@ -53,23 +87,32 @@ def chat():
         
         # Get information about the selected tool, if applicable
         tool_info = get_tool_info(tool_name) if tool_name else {}
+        print(tool_info)
 
         # Combine user message with tool information to create the enhanced prompt
         enhanced_prompt = f"User message: {user_message}\nTool information: {tool_info}"
 
         # Get the chatbot response
         response = ChatModel(user_id, enhanced_prompt)
+        
+        # Debugging: Print the response to see its structure
+        print("Response:", response)
+        
+        # Use `.get()` method to handle missing keys
+        formatted_response = format_summary_for_chat(response['res']['msg'])
+        info = response.get('info', 'No additional information')  # Default value if 'info' is missing
 
         # Add the interaction to the conversation history
-        conversation_history.append({"user": user_message, "bot": response['res']['msg']})
+        conversation_history.append({"user": user_message, "bot": formatted_response})
 
         return jsonify({
             "res": {
-                "msg": response['res']['msg']
+                "msg": formatted_response
             },
-            "info": response['info'],
+            "info": info,
             "selected_tool": tool_name
         })
+
 
 @app.route('/generate-summary', methods=['POST'])
 def generate_summary():
@@ -122,7 +165,7 @@ Notes:
 
 Disclaimer: This summary is for informational purposes only and does not constitute legal advice.
 
-follow the format: the headings, subheadings are not bolded, the points/content should be properly indicated and proper indentation is to be followed.
+Format: follow the format which is best suitable for React Markdown
 """
 
     # Call the Gemini LLM to generate the summary
@@ -132,7 +175,6 @@ follow the format: the headings, subheadings are not bolded, the points/content 
         # Assuming the response is an AIMessage object, extract the content appropriately
         if hasattr(summary_response, 'content'):
             summary_text = summary_response.content 
- # Accessing the content property
         else:
             summary_text = str(summary_response)  # Fallback to string conversion
         # Add the summary to the response
@@ -142,18 +184,6 @@ follow the format: the headings, subheadings are not bolded, the points/content 
         })
     except Exception as e:
         return jsonify({"error": f"Failed to generate summary: {str(e)}"}), 500
-
-def clean_summary(raw_summary):
-    # Replace headings '##' with a formatted title
-    clean_text = re.sub(r"##\s*(.+)", r"\1\n", raw_summary)
-
-    # Replace bold '**' with normal text
-    clean_text = re.sub(r"\*\*(.+?)\*\*", r"\1", clean_text)
-
-    # Replace bullet points '*' with '-' (optional) or leave them out for cleaner text
-    clean_text = re.sub(r"\*\s*", "- ", clean_text)
-
-    return clean_text
 
 def format_summary(summary):
     summary = clean_summary(summary)
@@ -203,11 +233,6 @@ def format_summary(summary):
     close_list()
     return formatted_content
 
-
-    close_list()
-    return formatted_content
-
-
 @app.route('/download-summary', methods=['POST'])
 def download_summary():
     data = request.json
@@ -233,7 +258,6 @@ def download_summary():
     # Prepare the response
     buffer.seek(0)
     return send_file(buffer, as_attachment=True, download_name='lawgpt_conversation_summary.pdf', mimetype='application/pdf')
-
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)

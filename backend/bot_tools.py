@@ -1,8 +1,10 @@
 import pymongo
 from langchain_core.tools import tool
 import requests
+from langchain.document_loaders import UnstructuredHTMLLoader
 
 # MongoDB connection
+
 client = pymongo.MongoClient("mongodb+srv://ice:9EUFPlE499todrIr@doj.y9b1r.mongodb.net/?retryWrites=true&w=majority&appName=DOJ")
 db = client["DojChatbot"]
 @tool
@@ -11,10 +13,11 @@ def check_case_with_CNR(CNR: str) -> str:
     data = {
         'cino': CNR
     }
+    print(data)
     r = requests.post('https://services.ecourts.gov.in/ecourtindia_v6/?p=cnr_status/searchByCNR/', data=data)
     with open("casereport.html", "w") as file:
         file.write(r.text)
-    loader = UnstructuredHTMLLoader("casereport.html") # type: ignore
+    loader = UnstructuredHTMLLoader("casereport.html")
     data = loader.load()
     return data
 @tool
@@ -53,13 +56,6 @@ def get_cases_info() -> dict:
     collection = db["cases_info"]
     result = collection.find_one({}, {"_id": 0})
     return {"cases_info": result}
-
-@tool
-def get_ac_info() -> dict:
-    """Retrieve overall case information and details about registered and unregistered cases."""
-    collection = db["ac_info"]
-    result = collection.find_one({}, {"_id": 0})
-    return {"ac_info": result}
 
 @tool
 def get_case_statistics() -> dict:
