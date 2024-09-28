@@ -1,0 +1,6 @@
+Flask
+Flask-Cors
+pymongo
+langchain-google-genai
+langchain-core
+langgraph

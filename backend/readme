@@ -1,0 +1,8 @@
+
+To get started, you'll need to install the required dependencies. You can do this using `pip`. Run the following command:
+
+```bash
+pip install -r requirements.txt
+
+```bash
+python app.py

@@ -1,0 +1,2204 @@
+{
+    "divisions": [
+      {
+        "name": "Appointment",
+        "description": "Deals with appointment, transfer, and removal of Chief Justice and Judges of the Supreme Court and High Courts. Also responsible for setting up new High Courts, Benches of Supreme Court and High Courts, and increasing Judge strength of the Supreme Court and High Courts of India.",
+        "functions": [
+          "Appointment of Chief Justice and Judges",
+          "Transfer of Judges",
+          "Removal of Judges",
+          "Establishment of new High Courts",
+          "Establishment of Benches of Supreme Court and High Courts",
+          "Increase in Judge strength"
+        ]
+      },
+      {
+        "name": "National Mission for Justice Delivery & Legal Reforms",
+        "description": "Deals with pendency reduction, ease of doing business (enforcing contracts parameter), development of infrastructure facilities for District and subordinate courts, the Gram Nyayalaya scheme, Rule of Law Index, and Action Research for Judicial Reforms.",
+        "functions": [
+          "Pendency reduction",
+          "Ease of doing business (enforcing contracts parameter)",
+          "Development of infrastructure facilities for District and subordinate courts",
+          "Implementation of Gram Nyayalaya scheme",
+          "Rule of Law Index",
+          "Action Research for Judicial Reforms"
+        ]
+      },
+      {
+        "name": "Access to Justice",
+        "description": "Implements the \"Designing Innovative Solutions for Holistic Access to Justice in India (DISHA)\" scheme, which includes Tele-law, Nyaya Bandhu, Nyaya Mitra, and Legal Literacy & Legal Awareness Programme. Also deals with matters related to NALSA, including grant-in-aid, Annual Accounts of National Legal Aid Fund, Audit Report of the C&AG, Annual Report of NALSA and Legal Services Authorities of UT, and representations/grievances for legal aid.",
+        "functions": [
+          "Implementation of DISHA scheme (Tele-law, Nyaya Bandhu, Nyaya Mitra, Legal Literacy & Legal Awareness Programme)",
+          "Grant-in-aid to NALSA",
+          "Laying of Annual Accounts of National Legal Aid Fund",
+          "Audit Report of the C&AG",
+          "Annual Report of NALSA and Legal Services Authorities of UT",
+          "Handling representations/grievances for legal aid"
+        ]
+      },
+      {
+        "name": "eCourts",
+        "description": "A Mission Mode Project using technology to enhance efficiency and speed of justice delivery in district and subordinate courts across India. Implemented jointly by the Department of Justice and eCommittee, Supreme Court of India.",
+        "functions": [
+          "Computerization of district and subordinate courts",
+          "Enhanced judicial service for litigants and lawyers through technology",
+          "Improved ICT Infrastructure, video conferencing, access across multiple platforms",
+          "Capacity building of officers",
+          "ICT provisioning for District Legal Service Authorities, Taluka Legal Service Committees, and State Judicial Academies",
+          "Judicial process re-engineering"
+        ],
+        "phases": [
+          {
+            "name": "Phase-I",
+            "description": "Approved in 2010, enabled computerization of 14,249 courts by 2015 at a cost of Rs. 639 crores.",
+            "years": "2010-2015",
+            "cost": "Rs. 639 crores"
+          },
+          {
+            "name": "Phase-II",
+            "description": "Commissioned in 2015, focusing on enhanced judicial service for litigants and lawyers through technology.",
+            "years": "2015-2019",
+            "cost": "Rs. 1670 crores"
+          },
+          {
+            "name": "Phase-III",
+            "description": "Approved in 2023, aims for digital, online, and paperless courts through digitization of records and universalization of e-Filing/e-Payments.",
+            "years": "2023 onwards",
+            "cost": "Rs. 7210 crores"
+          }
+        ]
+      },
+      {
+        "name": "Justice-I",
+        "description": "Deals with pay, allowance, and pension of Supreme Court and High Court Judges, Judicial Pay Commission, Pecuniary Jurisdiction of Delhi District Courts, use of Hindi and regional languages in courts, and redressal of public grievances.",
+        "functions": [
+          "Pay, allowance, and pension of Judges",
+          "Judicial Pay Commission",
+          "Pecuniary Jurisdiction of Delhi District Courts",
+          "Use of Hindi and regional languages in courts",
+          "Redressal of public grievances"
+        ]
+      },
+      {
+        "name": "Justice-II",
+        "description": "Deals with setting up Fast Track Special Courts for rape and POCSO Act cases, compiling case statistics, preparing proposals for Finance Commission, updating Citizen Charter, handling RTI applications, matters related to National Judicial Academy, Parliament Questions, and other miscellaneous issues.",
+        "functions": [
+          "Setting up Fast Track Special Courts",
+          "Compiling case statistics",
+          "Proposal preparation for Finance Commission",
+          "Citizen Charter updates",
+          "RTI applications",
+          "National Judicial Academy matters",
+          "Parliament Questions",
+          "Other miscellaneous issues"
+        ]
+      },
+      {
+        "name": "Administration",
+        "description": "Responsible for personnel/General administration of the Department of Justice, including budget, finance, audit, RTI, eOffice, training, Hindi/Rajbhasha matters, Swachhta Action Plan, and Parliamentary Matters coordination.",
+        "functions": [
+          "Personnel administration",
+          "Budget",
+          "Finance",
+          "Audit",
+          "RTI",
+          "eOffice",
+          "Training",
+          "Hindi/Rajbhasha matters",
+          "Swachhta Action Plan",
+          "Parliamentary Matters coordination"
+        ]
+      }
+    ],
+
+  "DepartmentOfJustice": {
+    "Functions": [
+      {
+        "Function": "Appointment and Removal",
+        "Details": "Appointment, resignation, and removal of the Chief Justice of India, Judges of the Supreme Court, and High Courts, including their salaries, leave rights, pensions, and allowances."
+      },
+      {
+        "Function": "Constitution and Organization of Supreme Court",
+        "Details": "Constitution and organization of the Supreme Court, excluding jurisdiction and powers, including contempt matters and fees."
+      },
+      {
+        "Function": "Constitution and Organization of High Courts",
+        "Details": "Constitution and organization of High Courts and Courts of Judicial Commissioners, excluding provisions for officers and servants."
+      },
+      {
+        "Function": "Union Territory Courts",
+        "Details": "Constitution and organization of Courts in Union Territories and related fees."
+      },
+      {
+        "Function": "Finance Commission Proposals",
+        "Details": "Implementation of proposals recommended and approved under Finance Commission awards."
+      },
+      {
+        "Function": "Data Collection",
+        "Details": "Collection of data on institution, disposal, and pendency of cases, and monitoring the status of under trial prisoners."
+      },
+      {
+        "Function": "Judicial Reforms",
+        "Details": "Initiate policy measures for judicial reforms."
+      },
+      {
+        "Function": "National Mission for Justice",
+        "Details": "Setting up and operationalization of the National Mission for Justice delivery and Legal reforms."
+      },
+      {
+        "Function": "Fast Track Special Courts",
+        "Details": "Setting up of Fast Track Special Courts for speedy trial and disposal of sexual offence cases."
+      },
+      {
+        "Function": "All India Judicial Service",
+        "Details": "Creation of the All India Judicial Service (AIJS)."
+      },
+      {
+        "Function": "Judiciary Infrastructure Development",
+        "Details": "Implementation of schemes for the development and modernization of judiciary infrastructure."
+      },
+      {
+        "Function": "Strengthening Department of Justice",
+        "Details": "Enhancing the Department of Justice through e-office, statistical wing, and website revamping."
+      },
+      {
+        "Function": "National Judicial Academy",
+        "Details": "All matters related to the National Judicial Academy."
+      },
+      {
+        "Function": "eCourts Project",
+        "Details": "Achieving universal computerization of all District & Subordinate Court complexes in coordination with the eCommittee of the Supreme Court."
+      },
+      {
+        "Function": "DISHA Scheme",
+        "Details": "Implementation of the Central Sector Scheme 'Designing Innovative Solutions for Holistic Access to Justice in India (DISHA)'."
+      },
+      {
+        "Function": "National Legal Services Authority",
+        "Details": "All matters related to the National Legal Services Authority (NALSA)."
+      }
+    ],
+    "Responsibilities": [
+      {
+        "Responsibility": "Appointment of Judges",
+        "Details": "Responsible for appointing, transferring, and removing judges and setting up new High Courts and Supreme Court benches."
+      },
+      {
+        "Responsibility": "Judicial Infrastructure",
+        "Details": "Implements schemes to develop infrastructure for the judiciary, including special courts for speedy trials."
+      },
+      {
+        "Responsibility": "Legal Aid",
+        "Details": "Provides legal aid to the poor and ensures access to justice."
+      },
+      {
+        "Responsibility": "Judicial Reforms",
+        "Details": "Develops policies for judicial reforms and modernizes court procedures."
+      },
+      {
+        "Responsibility": "Financial Assistance",
+        "Details": "Provides financial assistance to the National Judicial Academy for training judicial officers."
+      },
+      {
+        "Responsibility": "Legal Advice",
+        "Details": "Advises ministries on legal matters, including law and constitutional interpretation."
+      },
+      {
+        "Responsibility": "Conduct of Cases",
+        "Details": "Conducts cases on behalf of the Central and State Governments in Supreme Court and High Courts."
+      },
+      {
+        "Responsibility": "Reciprocal Arrangements",
+        "Details": "Maintains reciprocal arrangements with foreign countries for service of summons and execution of decrees."
+      }
+    ]
+  },
+    "JudicialInfrastructureScheme": {
+      "Overview": {
+        "Objective": "Improve physical infrastructure of Subordinate Courts and housing for Judicial Officers.",
+        "Coverage": "All States and Union Territories (UTs), excluding High Court buildings.",
+        "Type": "Not a reimbursement scheme."
+      },
+      "FinancialDetails": {
+        "TotalExpenditure": "Rs. 8325 crore (as of 31.03.2021)",
+        "FundingPattern": {
+          "Original": "50:50 (Central:State)",
+          "Revised2011": "75:25",
+          "Revised2015": "60:40 (Central:State), 90:10 for North-Eastern and Himalayan States",
+          "UTFunding": "100% Central funding"
+        },
+        "CurrentStatus": {
+          "LastExtensionDate": "10.11.2017",
+          "InitialExtension": "01.04.2017 to 31.03.2020",
+          "InterimExtension": "Until 31.03.2021 or Fifteenth Finance Commission recommendations",
+          "FutureConsideration": "Under consideration for 01.04.2021 to 31.03.2026"
+        }
+      },
+      "InfrastructureDetails": {
+        "CourtHalls": {
+          "SanctionedStrengthOfJudicialOfficers": 24291,
+          "AvailableCourtHalls": 20115,
+          "CourtHallsUnderConstruction": 2423
+        },
+        "ResidentialUnits": {
+          "AvailableUnits": 17705,
+          "UnitsUnderConstruction": 1857
+        }
+      },
+      "PlanningAndMonitoring": {
+        "ChiefJusticesConference": "April 2016",
+        "ProactiveSteps": [
+          "Identify infrastructural needs with five-year and annual action plans.",
+          "Complete projects pending for three or more years on a mission mode basis.",
+          "Timely completion of court complexes and judges' accommodation.",
+          "Constitute committees for monitoring and coordination.",
+          "Monthly reporting and monitoring of work and fund utilization.",
+          "Online progress updates by all High Courts."
+        ]
+      }
+    },
+    "JudicialSystem": {
+      "SupremeCourt": {
+        "TotalJudges": 34,
+        "ChiefJustice": true,
+        "RetirementAge": 65,
+        "AppointmentAuthority": "President of India"
+      },
+      "HighCourts": {
+        "SanctionedStrength": {
+          "May2014": 906,
+          "Current": 1108
+        }
+      },
+      "DistrictAndSubordinateCourts": {
+        "JudicialOfficers": {
+          "SanctionedStrength": "Increased over the years",
+          "WorkingStrength": "Increased over the years",
+          "Responsibility": "State Governments and High Courts are responsible for filling vacancies"
+        }
+      },
+      "JudgePopulationRatio": {
+        "Ratio": 18,
+        "Description": "Judges per one million people"
+      }
+    },
+    "JudiciaryVacancies": {
+      "SupremeCourt": {
+        "CurrentJudges": 33,
+        "MaxJudges": 34,
+        "Date": "August 2024"
+      },
+      "HighCourts": {
+        "Vacancies": {
+          "KarnatakaHighCourt": 11,
+          "KeralaHighCourt": 13,
+          "MadhyaPradeshHighCourt": 22,
+          "MadrasHighCourt": 12
+        },
+        "Date": "September 2024"
+      },
+      "DistrictAndSubordinateCourts": {
+        "Vacancies": 5768,
+        "Date": "February 2023",
+        "Note": "Vacancy positions available on the Department of Justice website."
+      }
+    },
+    "JudicialAppointments": [
+      {
+        "Title": "Appointment of Shri Justice Manmohan",
+        "Position": "Chief Justice of Delhi High Court",
+        "Date": "21/09/2024",
+        "AccessibleVersion": "View(154 KB)"
+      },
+      {
+        "Title": "Appointment of Justice Rajiv Shakdher",
+        "Position": "Chief Justice of Himachal Pradesh High Court",
+        "Date": "21/09/2024",
+        "AccessibleVersion": "View(175 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Suresh Kumar Kait",
+        "Position": "Chief Justice of Madhya Pradesh High Court",
+        "Date": "21/09/2024",
+        "AccessibleVersion": "View(177 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Indra Prasanna Mukerji",
+        "Position": "Chief Justice of Meghalaya High Court",
+        "Date": "21/09/2024",
+        "AccessibleVersion": "View(180 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Nitin Madhukar Jamdar",
+        "Position": "Chief Justice of Kerala High Court",
+        "Date": "21/09/2024",
+        "AccessibleVersion": "View(190 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Tashi Rabstan",
+        "Position": "Chief Justice of J&K and Ladakh High Court",
+        "Date": "21/09/2024",
+        "AccessibleVersion": "View(179 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice K.R. Shriram",
+        "Position": "Chief Justice of Madras High Court",
+        "Date": "21/09/2024",
+        "AccessibleVersion": "View(194 KB)"
+      },
+      {
+        "Title": "Transfer of Shri Justice M.S. Ramachandra Rao",
+        "Position": "Chief Justice of Jharkhand High Court",
+        "Date": "21/09/2024",
+        "AccessibleVersion": "View(178 KB)"
+      },
+      {
+        "Title": "Appointment of Ms. R. Poornima and others",
+        "Position": "Additional Judges of Madras High Court",
+        "Date": "21/09/2024",
+        "AccessibleVersion": "View(162 KB)"
+      },
+      {
+        "Title": "Transfer of Shri Justice Shamim Ahmed",
+        "Position": "Judge of Madras High Court",
+        "Date": "20/09/2024",
+        "AccessibleVersion": "View(171 KB)"
+      },
+      {
+        "Title": "Appointment of Smt. Lekshmana Chandra Victoria Gowri and others",
+        "Position": "Permanent Judges of Madras High Court",
+        "Date": "20/09/2024",
+        "AccessibleVersion": "View(39 KB)"
+      },
+      {
+        "Title": "Appointment of Smt. Justice Venkata Jyothirmai Pratapa and others",
+        "Position": "Permanent Judges of Andhra Pradesh High Court",
+        "Date": "21/08/2024",
+        "AccessibleVersion": "View(65 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Syed Qamar Hasan Rizvi and others",
+        "Position": "Permanent Judges of Allahabad High Court",
+        "Date": "21/08/2024",
+        "AccessibleVersion": "View(71 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Hamarsan Singh Thangkhiew",
+        "Position": "Acting Chief Justice of Meghalaya High Court",
+        "Date": "14/08/2024",
+        "AccessibleVersion": "View(930 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Bibhu Datta Guru and others",
+        "Position": "Additional Judges of Chhattisgarh High Court",
+        "Date": "12/08/2024",
+        "AccessibleVersion": "View(915 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Biswaroop Chowdhury and others",
+        "Position": "Additional Judges of Calcutta High Court",
+        "Date": "05/08/2024",
+        "AccessibleVersion": "View(70 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice Y.G. Khobradage and others",
+        "Position": "Permanent Judges of Bombay High Court",
+        "Date": "19/07/2024",
+        "AccessibleVersion": "View(182 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice S.G. Chapalgaonkar and others",
+        "Position": "Permanent Judges of Bombay High Court",
+        "Date": "19/07/2024",
+        "AccessibleVersion": "View(178 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice S.A. Deshmukh and another",
+        "Position": "Additional Judges of Bombay High Court",
+        "Date": "19/07/2024",
+        "AccessibleVersion": "View(173 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice Girish Kathpalia and others",
+        "Position": "Permanent Judges of Delhi High Court",
+        "Date": "19/07/2024",
+        "AccessibleVersion": "View(157 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Sujit Narayan Prasad",
+        "Position": "Acting Chief Justice of Jharkhand High Court",
+        "Date": "18/07/2024",
+        "AccessibleVersion": "View(835 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice N. Kotiswar Singh",
+        "Position": "Judge of Supreme Court",
+        "Date": "16/07/2024",
+        "AccessibleVersion": "View(185 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice R. Mahadevan",
+        "Position": "Judge of Supreme Court",
+        "Date": "16/07/2024",
+        "AccessibleVersion": "View(157 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Tashi Rabstan",
+        "Position": "Acting Chief Justice of Jammu & Kashmir High Court",
+        "Date": "16/07/2024",
+        "AccessibleVersion": "View(832 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice D. Krishnakumar",
+        "Position": "Acting Chief Justice of Madras High Court",
+        "Date": "16/07/2024",
+        "AccessibleVersion": "View(826 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Sheel Nagu",
+        "Position": "Chief Justice of P&H High Court",
+        "Date": "04/07/2024",
+        "AccessibleVersion": "View(190 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice Sanjeev Sachdeva",
+        "Position": "Acting Chief Justice of MP High Court",
+        "Date": "04/07/2024",
+        "AccessibleVersion": "View(149 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice M.M. Ayumantakath",
+        "Position": "Acting Chief Justice of Kerala High Court",
+        "Date": "03/07/2024",
+        "AccessibleVersion": "View(810 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice B.R. Sarangi",
+        "Position": "Chief Justice of Jharkhand High Court",
+        "Date": "03/07/2024",
+        "AccessibleVersion": "View(167 KB)"
+      },
+      {
+        "Title": "Transfer of Sh. Justice Shree Chandrashekhar",
+        "Position": "Judge of Jharkhand High Court",
+        "Date": "03/07/2024",
+        "AccessibleVersion": "View(163 KB)"
+      },
+      {
+        "Title": "Appointment of Smt. Justice Susmita Phukan Khaund and another",
+        "Position": "Permanent Judges of Gauhati High Court",
+        "Date": "11/06/2024",
+        "AccessibleVersion": "View(892 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Rajesh Sekhri",
+        "Position": "Additional Judge of Jammu & Kashmir High Court",
+        "Date": "11/06/2024",
+        "AccessibleVersion": "View(793 KB)"
+      },
+      {
+        "Title": "Transfer of Sh. Justice Sanjeev Sachdeva",
+        "Position": "Judge of Delhi High Court",
+        "Date": "29/05/2024",
+        "AccessibleVersion": "View(170 KB)"
+      },
+      {
+        "Title": "Transfer of Sh. Justice V. Kameswar Rao",
+        "Position": "Judge of Delhi High Court",
+        "Date": "29/05/2024",
+        "AccessibleVersion": "View(163 KB)"
+      },
+      {
+        "Title": "Transfer of Sh. Justice Arvind Singh Chandel",
+        "Position": "Judge of Chhattisgarh High Court",
+        "Date": "29/05/2024",
+        "AccessibleVersion": "View(163 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Sheel Nagu",
+        "Position": "Acting Chief Justice of Madhya Pradesh High Court",
+        "Date": "22/05/2024",
+        "AccessibleVersion": "View(160 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice R. Mahadevan",
+        "Position": "Acting Chief Justice of Madras High Court",
+        "Date": "22/05/2024",
+        "AccessibleVersion": "View(154 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice Wasim Sadiq Nargal",
+        "Position": "Permanent Judge of J&K and Ladakh High Court",
+        "Date": "09/05/2024",
+        "AccessibleVersion": "View(859 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Rakesh Mohan Pandey",
+        "Position": "Permanent Judge of Chhattisgarh High Court",
+        "Date": "09/05/2024",
+        "AccessibleVersion": "View(60 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Sachin Singh Rajput and another",
+        "Position": "Additional Judges of Chhattisgarh High Court",
+        "Date": "09/05/2024",
+        "AccessibleVersion": "View(65 KB)"
+      },
+      {
+        "Title": "Appointment of Smt. M.B. Snehalatha",
+        "Position": "Additional Judge of Kerala High Court",
+        "Date": "19/04/2024",
+        "AccessibleVersion": "View(1 MB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice C.M. Poonacha and others",
+        "Position": "Permanent Judges of Karnataka High Court",
+        "Date": "15/04/2024",
+        "AccessibleVersion": "View(1 MB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice G. Basavaraja",
+        "Position": "Additional Judge of Karnataka High Court",
+        "Date": "15/04/2024",
+        "AccessibleVersion": "View(1 MB)"
+      },
+      {
+        "Title": "Appointment of Smt. Justice U.S. Phalke-Joshi and others",
+        "Position": "Permanent Judges of Bombay High Court",
+        "Date": "21/03/2024",
+        "AccessibleVersion": "View(209 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Mohd. Yousuf Wani",
+        "Position": "Additional Judge of Jammu & Kashmir High Court",
+        "Date": "21/03/2024",
+        "AccessibleVersion": "View(173 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Mullappally Abdul Aziz Abdul Hakhim and others",
+        "Position": "Additional Judges of Kerala High Court",
+        "Date": "21/03/2024",
+        "AccessibleVersion": "View(177 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Saurabh Srivastava and others",
+        "Position": "Permanent Judges of Allahabad High Court",
+        "Date": "18/03/2024",
+        "AccessibleVersion": "View(166 KB)"
+      },
+      {
+        "Title": "Transfer of Shri Justice Sujoy Paul",
+        "Position": "Judge of Madhya Pradesh High Court",
+        "Date": "18/03/2024",
+        "AccessibleVersion": "View(169 KB)"
+      },
+      {
+        "Title": "Transfer of Shri Justice Ms. Anu Sivaraman",
+        "Position": "Judge of Kerala High Court",
+        "Date": "18/03/2024",
+        "AccessibleVersion": "View(170 KB)"
+      },
+      {
+        "Title": "Transfer of Ms. Moushumi Bhattacharya",
+        "Position": "Judge of Calcutta High Court",
+        "Date": "18/03/2024",
+        "AccessibleVersion": "View(168 KB)"
+      },
+      {
+        "Title": "Relinquish of charge by Shri Justice Abhijit Gangopadhyay",
+        "Position": "Judge of Calcutta High Court",
+        "Date": "17/03/2024",
+        "AccessibleVersion": "View(658 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice Kuldeep Tiwari and others",
+        "Position": "Judges of Punjab and Haryana High Court",
+        "Date": "10/03/2024",
+        "AccessibleVersion": "View(501 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice B. V. L. N. Chakravarthi and another",
+        "Position": "Judges of Andhra Pradesh High Court",
+        "Date": "10/03/2024",
+        "AccessibleVersion": "View(68 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice D. V. Ramana",
+        "Position": "Judge of Madhya Pradesh High Court",
+        "Date": "10/03/2024",
+        "AccessibleVersion": "View(187 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice N. V. Anjaria",
+        "Position": "Chief Justice of Karnataka High Court",
+        "Date": "16/02/2024",
+        "AccessibleVersion": "View(841 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice M.M. Shrivastava",
+        "Position": "Chief Justice of Rajasthan High Court",
+        "Date": "02/02/2024",
+        "AccessibleVersion": "View(150 KB)"
+      },
+      {
+        "Title": "Appointment of Kumari Justice Ritu Bahri",
+        "Position": "Chief Justice of Uttarakhand High Court",
+        "Date": "02/02/2024",
+        "AccessibleVersion": "View(188 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Chakradhari Sharan Singh",
+        "Position": "Chief Justice of Orissa High Court",
+        "Date": "02/02/2024",
+        "AccessibleVersion": "View(166 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Vijay Bishnoi",
+        "Position": "Chief Justice of Gauhati High Court",
+        "Date": "02/02/2024",
+        "AccessibleVersion": "View(184 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice S. Vaidyanathan",
+        "Position": "Chief Justice of Meghalaya High Court",
+        "Date": "02/02/2024",
+        "AccessibleVersion": "View(170 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice G.S. Sandhawalia",
+        "Position": "Acting Chief Justice of P&H High Court",
+        "Date": "02/02/2024",
+        "AccessibleVersion": "View(172 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice P.S. Dinesh Kumar",
+        "Position": "Chief Justice of Karnataka High Court",
+        "Date": "31/01/2024",
+        "AccessibleVersion": "View(148 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Arun Kumar Rai",
+        "Position": "Judge of Jharkhand High Court",
+        "Date": "31/01/2024",
+        "AccessibleVersion": "View(153 KB)"
+      },
+      {
+        "Title": "Appointment of Ms. Justice Ananya Bandyopadhya and another",
+        "Position": "Permanent Judges of Calcutta High Court",
+        "Date": "30/01/2024",
+        "AccessibleVersion": "View(155 KB)"
+      },
+      {
+        "Title": "Appointment of Smt. Justice Shampa Dutt (Paul) and another",
+        "Position": "Permanent Judges of Calcutta High Court",
+        "Date": "30/01/2024",
+        "AccessibleVersion": "View(155 KB)"
+      },
+      {
+        "Title": "Appointment of Smt. Justice Lapita Banerji",
+        "Position": "Permanent Judge of P&H High Court",
+        "Date": "30/01/2024",
+        "AccessibleVersion": "View(188 KB)"
+      },
+      {
+        "Title": "Appointment of Smt. Justice Shoba A. Eapen",
+        "Position": "Permanent Judge of Kerala High Court",
+        "Date": "30/01/2024",
+        "AccessibleVersion": "View(150 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Pradeep Kumar Srivastava",
+        "Position": "Permanent Judge of Jharkhand High Court",
+        "Date": "30/01/2024",
+        "AccessibleVersion": "View(147 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice Subhendu Samanta",
+        "Position": "Additional Judge of Calcutta High Court",
+        "Date": "30/01/2024",
+        "AccessibleVersion": "View(148 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice P.B. Varale",
+        "Position": "Judge of the Supreme Court",
+        "Date": "24/01/2024",
+        "AccessibleVersion": "View(159 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice P.S. Dinesh Kumar",
+        "Position": "Acting Chief Justice of Karnataka High Court",
+        "Date": "24/01/2024",
+        "AccessibleVersion": "View(150 KB)"
+      },
+      {
+        "Title": "Appointment of Sh. Justice Abhay Ahuja",
+        "Position": "Permanent Judge of Bombay High Court",
+        "Date": "23/01/2024",
+        "AccessibleVersion": "View(163 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Arvind Kumar Verma",
+        "Position": "Additional Judge of Chhattisgarh High Court",
+        "Date": "22/01/2024",
+        "AccessibleVersion": "View(142 KB)"
+      },
+      {
+        "Title": "Appointment of Shri Justice Rahul Bharti and another",
+        "Position": "Permanent Judges of Jammu & Kashmir and Ladakh High Court",
+        "Date": "22/01/2024",
+        "AccessibleVersion": "View(182 KB)"
+      }
+    ],
+    "introduction": {
+      "description": "To become a judge or magistrate in India is a highly respected position, associated with responsibility and pride in a democratic society."
+    },
+    "stepsToBecomeJudge": [
+      {
+        "step": 1,
+        "description": "Obtain an LL.B degree from a recognized University/College.",
+        "options": [
+          {
+            "type": "3_year",
+            "description": "LL.B degree pursued after graduation in any stream."
+          },
+          {
+            "type": "5_year",
+            "description": "Integrated B.A./BBA/B.Com/B.Sc LL.B degree pursued after class 12."
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "description": "Compete in the State Judicial Services Examination conducted by respective State Governments.",
+        "stages": ["Preliminary", "Mains", "Viva-Voice"]
+      }
+    ],
+    "eligibility": {
+      "categories": [
+        {
+          "name": "Advocate, Attorney, Pleader",
+          "requirements": {
+            "age": {
+              "min": 21,
+              "max": 35
+            },
+            "qualification": "LL.B degree with practice in High Court or subordinate courts."
+          }
+        },
+        {
+          "name": "Fresh Law Graduates",
+          "requirements": {
+            "age": {
+              "min": 21,
+              "max": 35
+            },
+            "qualification": "LL.B degree with first attempt pass or LL.M with 55% marks."
+          }
+        },
+        {
+          "name": "Members of Ministerial Staff of High Court",
+          "requirements": {
+            "age": {
+              "min": 21,
+              "max": 45
+            }
+          }
+        },
+        {
+          "name": "Legal Assistant or above in Government Legal Sector",
+          "requirements": {
+            "age": {
+              "min": 21,
+              "max": 45
+            }
+          }
+        },
+        {
+          "name": "Ministerial Staff of Government Office",
+          "requirements": {
+            "age": {
+              "min": 21,
+              "max": 45
+            }
+          }
+        }
+      ]
+    },
+    "judicialPositions": {
+      "supremeCourt": {
+        "appointment": {
+          "description": "Appointed by the President after consultation.",
+          "qualifications": [
+            "Citizenship of India",
+            "5 years as a judge of a High Court or succession of High Courts",
+            "10 years as an advocate in High Courts",
+            "Distinguished jurist recognized by the President"
+          ]
+        }
+      },
+      "highCourt": {
+        "appointment": {
+          "description": "Appointed by the President after consultation with the Chief Justice and Governor.",
+          "qualifications": [
+            "Citizenship of India",
+            "10 years in judicial office",
+            "10 years as an advocate in High Courts"
+          ]
+        }
+      },
+      "districtAndSubordinateCourts": {
+        "appointment": {
+          "description": "Appointments made by the Governor in consultation with the High Court.",
+          "qualifications": [
+            "Member of the judicial service of the State",
+            "7 years of practice as a lawyer"
+          ]
+        }
+      }
+    },
+    "conclusion": {
+      "message": "There are multiple pathways to becoming a judge in India, requiring expertise in law and comprehensive legal knowledge. The retirement age is 65 for Supreme Court judges and 62 for High Court judges."
+    },
+    "CaseResolutionTime": {
+      "HighCourt": {
+        "State": "Karnataka",
+        "AverageTime": "4 years",
+        "Ranking": {
+          "TotalStates": 18,
+          "Position": 10
+        }
+      },
+      "LowerCourts": {
+        "State": "Karnataka",
+        "AverageTime": "4 years",
+        "Ranking": {
+          "Position": 4
+        }
+      },
+      "OtherStates": {
+        "Maharashtra": {
+          "HighCourtAverageTime": "3.5 years",
+          "LowerCourtAverageTime": "3 years"
+        },
+        "Delhi": {
+          "HighCourtAverageTime": "3 years",
+          "LowerCourtAverageTime": "2.5 years"
+        },
+        "WestBengal": {
+          "HighCourtAverageTime": "4.5 years",
+          "LowerCourtAverageTime": "3.5 years"
+        },
+        "TamilNadu": {
+          "HighCourtAverageTime": "4 years",
+          "LowerCourtAverageTime": "3.2 years"
+        }
+      },
+      "OverallJudiciaryRanking": {
+        "State": "Karnataka",
+        "Position": 16
+      }
+    },
+    "app_info": {
+        "description": "eCourts Services App is useful to Citizen, Litigants, Lawyers, Police, Government Agencies, and other Institutional Litigants.",
+        "services": [
+            {
+                "name": "Search by CNR",
+                "description": "CNR is a unique number assigned to each case filed in District and Taluka Courts in the Country, through Case Information System. Simply by entering the CNR one can get the current status and details of the case."
+            },
+            {
+                "name": "Case Status",
+                "description": "Case Status can be searched by various options like Case Number, Party Name, Filing Number, FIR Number, Advocate Name, Relevant Act of the Case, and Case Type.",
+                "details": [
+                    "Initial search result of case status is displayed with Case Number and names of parties.",
+                    "Case details include information of Case Type, Filing Number, Filing Date, Registration Number, Registration Date, and CNR Number.",
+                    "Case Status includes information of First Hearing Date, Next Hearing Date, State of Case, Court Number, and Designation of Judge."
+                ],
+                "expandable_views": [
+                    "Petitioner and Advocate",
+                    "Respondent and Advocate",
+                    "Acts",
+                    "History of Case Hearing",
+                    "Judgment and Order",
+                    "Transfer Details"
+                ],
+                "features": {
+                    "History of Case Hearing": "Shows entire history of the case from first date of hearing to current date of hearing. When clicking the date of hearing, the business recorded on the clicked date is displayed.",
+                    "Judgment and Order": "Shows links of all judgments and orders passed and uploaded in the selected case. These can be clicked to view the full content."
+                }
+            },
+            {
+                "name": "Cause List",
+                "description": "Generates cause list of selected Court. By default, the current date is selected for generating cause list. However, one can change this date to any recent future date."
+            },
+            {
+                "name": "My Cases",
+                "description": "Allows litigants or lawyers to save cases of interest, which will be shown under My Cases tab with details like the establishment and number of cases saved.",
+                "features": {
+                    "Today's Cases": "Provides the facility to view only today’s listed cases from all saved cases.",
+                    "Remove Case": "Gives option to remove a case when viewing case details.",
+                    "Refresh": "Updates the information saved under My Cases. If a case is not updated due to connection issues, the app will show 'connection error'."
+                }
+            },
+            {
+                "name": "Advocate",
+                "description": "Information can be searched by the name of the Advocate or their Bar Code. It generates a list of all cases associated with the advocate when their Bar Code is entered."
+            },
+            {
+                "name": "Date Case List",
+                "description": "Generates a unique cause list for all cases of an advocate listed before all courts in the complex."
+            }
+        ],
+        "backup": {
+            "description": "Backup facility is provided to take a backup of saved cases on a mobile device.",
+            "features": {
+                "Export": "Backup can be taken in text file format on the device.",
+                "Import": "Data can be restored in the My Cases tab."
+            }
+        }
+    },
+    "eFiling": {
+      "generalSteps": [
+        {
+          "step": 1,
+          "description": "Go to the e-filing portal",
+          "url": "http://www.efiling.ecourts.gov.in"
+        },
+        {
+          "step": 2,
+          "description": "Enter your login ID and password"
+        },
+        {
+          "step": 3,
+          "description": "Enter the captcha"
+        },
+        {
+          "step": 4,
+          "description": "Click on LOGIN"
+        }
+      ],
+      "supremeCourtSteps": [
+        {
+          "step": 1,
+          "description": "Go to the Supreme Court of India's official website",
+          "url": "http://www.sci.gov.in"
+        },
+        {
+          "step": 2,
+          "description": "Go to the e-filing registration page",
+          "url": "http://www.sci.gov.in/efiling-registration"
+        },
+        {
+          "step": 3,
+          "description": "Pay the required court fees and printing charges"
+        },
+        {
+          "step": 4,
+          "description": "Refer to the user manual on the website before filing the case"
+        }
+      ],
+      "guidelines": [
+        {
+          "guideline": 1,
+          "description": "The petition must be typed in double space, justified, and in 14 font size and courier format"
+        },
+        {
+          "guideline": 2,
+          "description": "Only corrected pages should be uploaded when re-filing"
+        },
+        {
+          "guideline": 3,
+          "description": "The online e-filing should not be encrypted or watermarked"
+        },
+        {
+          "guideline": 4,
+          "description": "The e-filed documents should not contain any malware, virus, trojan horse, or spam-ware"
+        },
+        {
+          "guideline": 5,
+          "description": "All the e-filed documents should be legible and free of all annotations, track changes, or markings"
+        }
+      ]
+    },
+    "ePaymentProcess": {
+      "steps": [
+        {
+          "step": 1,
+          "description": "Open URL",
+          "url": "https://pay.ecourts.gov.in",
+          "browser": ["Google Chrome", "Firefox", "etc."]
+        },
+        {
+          "step": 2,
+          "description": "Choose Fine as Payment type"
+        },
+        {
+          "step": 3,
+          "description": "Note: Fine can only be paid for existing cases"
+        },
+        {
+          "step": 4,
+          "description": "Identify existing case by choosing from 'CNR Number' OR 'Case Number'"
+        },
+        {
+          "step": 5,
+          "description": "CNR Number is a unique 16-digit alphanumeric number assigned to each case",
+          "additionalInfo": "Find CNR number from eCourt services website, Kiosks in court premises, or contact court staff"
+        },
+        {
+          "step": 6,
+          "description": "To find Case Particulars through CNR Number, enter the 16 Digit CNR number and click GO",
+          "note": "Verify particulars before proceeding"
+        },
+        {
+          "step": 7,
+          "description": "To find case particulars through Case Number, select State (Orissa), Relevant District, Relevant Establishment, Case Type, then enter Case Number and Year, and click GO",
+          "note": "Verify particulars before proceeding"
+        },
+        {
+          "step": 8,
+          "description": "Choose the name of the party depositing Fine from dropdown list, or enter new party name if not listed"
+        },
+        {
+          "step": 9,
+          "description": "Enter Amount of Fine and Mobile Number"
+        },
+        {
+          "step": 10,
+          "description": "Select the check box for 'I Agree to above Terms and Conditions'"
+        },
+        {
+          "step": 11,
+          "description": "Click on Generate OTP and an OTP will be sent to your mobile"
+        },
+        {
+          "step": 12,
+          "description": "Enter OTP and click on 'Verify' button. Regenerate OTP after 2 minutes if not received"
+        },
+        {
+          "step": 13,
+          "description": "After verification, you will be redirected to IFMS Odisha (e-Receipt 2.0) for payment"
+        },
+        {
+          "step": 14,
+          "description": "Choose Payment Gateway option to pay via Credit/Debit Card or Net banking and click 'Proceed to Payment'"
+        },
+        {
+          "step": 15,
+          "description": "Select payment option, provide required details, and click 'Pay Now'"
+        },
+        {
+          "step": 16,
+          "description": "Make the payment to complete the transaction"
+        },
+        {
+          "step": 17,
+          "description": "Payment successful message will be displayed by the bank"
+        },
+        {
+          "step": 18,
+          "description": "Bank will redirect back to IFMS Odisha (e-Receipt 2.0) displaying a successful message and Challan Receipt"
+        },
+        {
+          "step": 19,
+          "description": "Click 'Back to Department website' button to return to ePay website"
+        },
+        {
+          "step": 20,
+          "description": "Acknowledgment slip from eCourts ePay will be displayed with options to 'Print' or 'Download PDF'",
+          "note": "This PDF is required as proof of payment of Fine"
+        },
+        {
+          "step": 21,
+          "description": "Use the ACKNOWLEDGMENT slip as proof of payment and submit it in the concerned court for verification"
+        }
+      ]
+    },
+    "trafficViolationPayments": {
+      "paymentProcess": {
+        "description": "e-Filing of cases requires the option for electronic payment of fees including court fees, fines, and penalties payable to the Consolidated Fund.",
+        "startDate": "14th August 2018",
+        "url": "https://pay.ecourts.gov.in"
+      },
+      "paymentTypes": [
+        {
+          "type": "Court Fees",
+          "description": "Fees associated with filing cases in court."
+        },
+        {
+          "type": "Fines",
+          "description": "Monetary penalties for traffic violations."
+        },
+        {
+          "type": "Penalties",
+          "description": "Additional fees imposed for certain violations."
+        },
+        {
+          "type": "Judicial Deposits",
+          "description": "Deposits required by the court."
+        }
+      ]
+    },
+    "eCourtsServicesApp": {
+      "appDetails": {
+        "name": "eCourts Services Mobile App",
+        "award": "Digital India Award",
+        "description": "Revolutionary court information tool in the country.",
+        "availability": [
+          {
+            "platform": "Google Play Store",
+            "url": "https://play.google.com/store"
+          },
+          {
+            "platform": "Apple App Store",
+            "url": "https://www.apple.com/app-store/"
+          }
+        ],
+        "features": [
+          "Case status",
+          "Cause lists",
+          "Court orders"
+        ],
+        "accessibility": "Available 24X7"
+      },
+      "moreInfo": {
+        "url": "https://ecommitteesci.gov.in/service/ecourts-services-mobile-application/"
+      }
+    },
+  "eCourtsMissionModeProject": {
+    "overview": {
+      "concept": "The eCourts Project was conceptualized based on the National Policy and Action Plan for Implementation of ICT in the Indian Judiciary – 2005.",
+      "vision": "To transform the Indian Judiciary through ICT enablement of Courts.",
+      "initiatedBy": "eCommittee, Supreme Court of India"
+    },
+    "governance": {
+      "body": "eCommittee",
+      "establishedBy": "Government of India",
+      "purpose": "Assist in formulating a national policy on computerization of the Indian Judiciary."
+    },
+    "funding": {
+      "monitoredBy": "Department of Justice, Ministry of Law and Justice, Government of India",
+      "scope": "District Courts across the country."
+    },
+    "projectGoals": [
+      "Efficient & time-bound citizen-centric service delivery.",
+      "Develop, install & implement decision support systems in courts.",
+      "Automate processes for transparency in information accessibility.",
+      "Enhance judicial productivity to make justice delivery affordable and reliable."
+    ],
+    "phases": {
+      "phaseI": {
+        "startYear": 2007,
+        "achievements": [
+          "Computerization of District and Taluka Court Complexes.",
+          "Installation of hardware and Case Information Software (CIS).",
+          "Launching of District Court websites."
+        ],
+        "training": "Judicial Officers trained by Master Trainers.",
+        "completionDate": "30th March 2015"
+      },
+      "phaseII": {
+        "approvalDate": "8th January 2014",
+        "sanctionDate": "4th August 2015",
+        "enhancements": [
+          "Additional hardware and systems per Court Room.",
+          "Cloud Computing Architecture for efficiency.",
+          "Computerization of Legal Services Authorities and Judicial Academies."
+        ],
+        "keyFeatures": [
+          "Capacity Building of Judicial Officers.",
+          "Integrated Library Management System.",
+          "Kiosks for every Court Complex.",
+          "ePayment gateways for court fees and fines."
+        ]
+      }
+    },
+    "nationalPortal": {
+      "launchDate": "7th August 2013",
+      "url": "https://ecourts.gov.in",
+      "dataCoverage": {
+        "districts": "2852 Districts and Taluka Court Complexes.",
+        "pendingCases": "Over 7 crore pending and disposed of cases.",
+        "ordersJudgments": "3.3 crore orders/judgments available."
+      }
+    },
+    "dataAnalysis": {
+      "tools": [
+        "Online Analytical Processing",
+        "Business Intelligence Tools"
+      ],
+      "purposes": [
+        "Preparation of informative management systems.",
+        "Judicial performance enhancement."
+      ]
+    },
+    "eCommitteeComposition": {
+      "patron": "Hon’ble the Chief Justice of India",
+      "members": [
+        {
+          "role": "Processes",
+          "responsibilities": "Implementation and application of Judicial Processes and automation."
+        },
+        {
+          "role": "Project Management",
+          "responsibilities": "Monitoring and coordination of the eCommittee and PMU."
+        },
+        {
+          "role": "Human Resources",
+          "responsibilities": "Management and monitoring of Human Resources provisioned through the Project."
+        },
+        {
+          "role": "Systems",
+          "responsibilities": "Customization and deployment of Operating Systems and Application Software."
+        }
+      ]
+    },
+    "highCourtRoles": {
+      "implementingAgency": "High Court as the Implementing Agency for project implementation.",
+      "structure": {
+        "highCourtComputerCommittee": "Oversees implementation tasks.",
+        "centralProjectCoordinator": {
+          "description": "District Judge or Senior Civil Judge coordinating project tasks."
+        },
+        "districtCourtComputerCommittee": "Monitors project implementation at District level.",
+        "nodalOfficer": "Designated Judicial Officer as point of contact for project progress."
+      }
+    }
+  },
+    "judgmentSearch": {
+      "url": "https://judgments.ecourts.gov.in",
+      "features": [
+        {
+          "feature": "Search by Bench",
+          "description": "Filter judgments based on the bench that delivered the decision."
+        },
+        {
+          "feature": "Case Type",
+          "description": "Search judgments according to the type of case."
+        },
+        {
+          "feature": "Case Number",
+          "description": "Search using the specific case number."
+        },
+        {
+          "feature": "Year",
+          "description": "Filter judgments by the year they were delivered."
+        },
+        {
+          "feature": "Petitioner/Respondent Name",
+          "description": "Search for judgments using the name of the petitioner or respondent."
+        },
+        {
+          "feature": "Judge Name",
+          "description": "Filter judgments based on the judge's name."
+        },
+        {
+          "feature": "Act",
+          "description": "Search based on the legal act under which the case was filed."
+        },
+        {
+          "feature": "Section",
+          "description": "Filter judgments by specific sections of law."
+        },
+        {
+          "feature": "Decision: From Date, To Date",
+          "description": "Search for judgments within a specific date range."
+        },
+        {
+          "feature": "Full Text Search",
+          "description": "Conduct a comprehensive search of the judgment text."
+        }
+      ]
+    },
+    "fastTrackSpecialCourts": {
+      "objective": "Championing the safety and security of women and girl children.",
+      "legislation": {
+        "name": "Criminal Law (Amendment) Act, 2018",
+        "provisions": [
+          "Stringent punishment for perpetrators of rape, including death penalty."
+        ]
+      },
+      "schemeDetails": {
+        "startDate": "October 2019",
+        "implementingBody": "Department of Justice",
+        "coverage": {
+          "eligibleStates": 31,
+          "joinedStates": 30,
+          "specialRequests": [
+            {
+              "state": "Puducherry",
+              "operationalizationDate": "May 2023"
+            }
+          ]
+        },
+        "courtStructure": {
+          "judicialOfficer": 1,
+          "staffMembers": 7
+        },
+        "budget": {
+          "initialOutlay": {
+            "amount": "Rs. 767.25 Cr.",
+            "centralShare": "Rs. 474 Cr.",
+            "financialYears": [
+              "2019-20",
+              "2020-21"
+            ]
+          },
+          "continuationApproval": {
+            "date": "28.11.2023",
+            "duration": "01.04.2023 to 31.03.2026",
+            "totalOutlay": "Rs. 1952.23 Cr.",
+            "centralShare": "Rs. 1207.24 Cr."
+          }
+        },
+        "fundReleases": {
+          "2019-20": "Rs. 140 Cr.",
+          "2020-21": "Rs. 160 Cr.",
+          "2021-22": "Rs. 134.56 Cr.",
+          "2022-23": "Rs. 200 Cr.",
+          "2023-24": "Rs. 200 Cr."
+        },
+        "courtStatistics": {
+          "functionalFTSCs": 755,
+          "exclusivePOCSOCourts": 410,
+          "statesUTs": 30,
+          "disposedCases": "Over 253,000 pending cases"
+        },
+        "currentFinancialYearAllocation": {
+          "year": "2024-25",
+          "amount": "Rs. 200 Cr."
+        }
+      },
+      "monitoringFramework": {
+        "onlineMonitoring": "Created for monthly monitoring of case statistics.",
+        "reviewMeetings": "Regular meetings with Registrar Generals of High Courts and State functionaries."
+      },
+      "images": [
+        "https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/2024/07/20240702244773851.png",
+        "https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/2024/07/202407021424091251.png",
+        "https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/2024/07/202407021924162928.png",
+        "https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/2024/07/202407021751057998.png",
+        "https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/2024/07/20240702544940111.png"
+      ]
+    },
+    "eFilingSystem": {
+      "description": "Online system to file cases in Indian courts.",
+      "features": [
+        {
+          "feature": "File a Case",
+          "description": "File a case or application from home or office."
+        },
+        {
+          "feature": "Upload Documents",
+          "description": "Upload pleadings and documents in PDF format and e-sign online."
+        },
+        {
+          "feature": "Pay Court Fees",
+          "description": "Pay court fees online."
+        },
+        {
+          "feature": "View Case Status",
+          "description": "Check the status of your case online."
+        }
+      ],
+      "department": "Department of Justice (DoJ)",
+      "initiatives": [
+        {
+          "initiative": "Virtual Courts",
+          "description": "Allow litigants and advocates to participate remotely, saving time and manpower."
+        },
+        {
+          "initiative": "Procedural Law Amendments",
+          "description": "Changes to CrPC and CPC to reduce adjournments and rationalize compoundable offenses."
+        },
+        {
+          "initiative": "Fast Track Special Courts (FTSCs)",
+          "description": "Address crimes against women and children, with jurisdiction over homicide, sexual crimes, and abortion."
+        }
+      ],
+      "prompt": "Please ask about e-filing to get a prompt reply about it for further info."
+    },
+    "FastTrackCourts": {
+      "timeline": {
+        "establishmentRecommendation": {
+          "year": 2015,
+          "details": "The 14th Finance Commission recommended the establishment of 1,800 FTCs."
+        },
+        "implementationPeriod": {
+          "startYear": 2015,
+          "endYear": 2020,
+          "details": "States were encouraged to establish FTCs during this period."
+        },
+        "currentStatus": {
+          "year": 2024,
+          "functionalFTCs": 866,
+          "updateDate": "May 2024"
+        }
+      },
+      "process": {
+        "setup": {
+          "collaboration": "State governments work with High Courts to establish FTCs.",
+          "responsibility": "State governments handle the operational aspects."
+        },
+        "jurisdiction": [
+          "Homicide",
+          "Sexual crimes",
+          "Abortion",
+          "Crimes against freedom",
+          "Crimes against moral integrity",
+          "Civil cases related to women",
+          "Civil cases related to children",
+          "Civil cases related to senior citizens",
+          "Civil cases related to HIV/AIDS",
+          "Property cases pending for more than five years"
+        ],
+        "monitoring": {
+          "department": "Department of Justice",
+          "methods": [
+            "Online monitoring framework",
+            "Regular review meetings with Registrar Generals of High Courts",
+            "Collaboration with State functionaries"
+          ]
+        }
+      }
+    },
+    "TeleLawServices": {
+      "description": "Tele-Law service provides legal advice and consultation at the pre-litigation stage.",
+      "launchYear": 2017,
+      "accessibility": [
+        "Common Service Centers (CSC)",
+        "Tele-Law Mobile App"
+      ],
+      "process": {
+        "steps": [
+          {
+            "step": 1,
+            "action": "Find a Village Level Entrepreneur (VLE)",
+            "details": "Visit a Common Service Center (CSC) and inquire about the Tele-Law service. The VLE will provide information and register you as an applicant."
+          },
+          {
+            "step": 2,
+            "action": "Upload your details",
+            "details": "The VLE will upload your details to the Tele-Law portal information form."
+          },
+          {
+            "step": 3,
+            "action": "Get an appointment",
+            "details": "The VLE or Panel Legal Volunteer (PLV) will assist you in securing an appointment with a Panel Lawyer."
+          },
+          {
+            "step": 4,
+            "action": "Connect with a Panel Lawyer",
+            "details": "You can connect with a Panel Lawyer via video conferencing, chat, or telephone at the CSC. An SMS with your appointment details will be sent to your registered mobile number."
+          }
+        ]
+      }
+    },
+    "TeleLaw": {
+      "description": "Tele-Law connects individuals with legal experts for advice and consultation at the pre-litigation stage.",
+      "connectingProcess": {
+        "steps": [
+          {
+            "step": 1,
+            "action": "Visit a Common Service Center (CSC)",
+            "details": "Individuals go to a CSC and inquire about the Tele-Law service."
+          },
+          {
+            "step": 2,
+            "action": "Engage a Village Level Entrepreneur (VLE)",
+            "details": "The VLE provides information about the Tele-Law service and registers the individual as an applicant."
+          },
+          {
+            "step": 3,
+            "action": "Information Upload",
+            "details": "The VLE uploads the individual's details to the Tele-Law portal."
+          },
+          {
+            "step": 4,
+            "action": "Appointment Scheduling",
+            "details": "The VLE or a Panel Legal Volunteer (PLV) assists in scheduling an appointment with a Panel Lawyer."
+          },
+          {
+            "step": 5,
+            "action": "Consultation",
+            "details": "Individuals connect with the Panel Lawyer through video conferencing, chat, or telephone at the CSC."
+          },
+          {
+            "step": 6,
+            "action": "Receive Appointment Confirmation",
+            "details": "An SMS with appointment details is sent to the individual's registered mobile number."
+          }
+        ]
+      },
+      "features": {
+        "availability": "Accessible through Common Service Centers and the Tele-Law Mobile App.",
+        "targetAudience": "Individuals seeking legal advice before litigation."
+      },
+      "launchYear": 2017,
+      "currentStatus": {
+        "year": 2024,
+        "note": "Continuously expanding to improve access to legal services."
+      }
+    },
+    "TeleLawContactInfo": {
+      "DepartmentOfJustice": {
+        "name": "Department of Justice",
+        "ministry": "Ministry of Law and Justice",
+        "address": "Jaisalmer House, 26, Mansingh Road, New Delhi-110011",
+        "phone": "011-23074401"
+      },
+      "CscEGovernance": {
+        "name": "CSC e-Governance Services India Ltd.",
+        "address": "4th Floor, Electronic Niketan, DIT Programme Management Unit 6, CGO Complex, Lodhi Road, South Delhi -110003"
+      },
+      "grievanceEmail": "telelaw.grievance@csc.gov.in",
+      "howToFindProviders": {
+        "steps": [
+          {
+            "step": 1,
+            "action": "Visit the Tele-Law website",
+            "url": "https://www.tele-law.in/tele-law-details-of-cscvle.html"
+          },
+          {
+            "step": 2,
+            "action": "Select your state",
+            "details": "A list of CSCs and their contact details will appear."
+          },
+          {
+            "step": 3,
+            "action": "Contact Providers",
+            "details": "Call the PLV's number or visit the CSC's address."
+          },
+          {
+            "step": 4,
+            "action": "Ask Local Leaders",
+            "details": "Inquire with Village Headmen for PLV details."
+          }
+        ]
+      },
+      "serviceDescription": "Tele-Law provides legal advice and consultation before court proceedings, connecting individuals with Panel Lawyers via video conferencing or phone at Common Service Centres (CSCs).",
+      "mobileApp": {
+        "availability": "Available on Android and iOS."
+      }
+    },
+    "TrafficFineProcedures": {
+      "PayingTrafficFinesOnline": {
+        "steps": [
+          {
+            "step": 1,
+            "action": "Go to the e-Challan portal at echallan.parivahan.gov.in."
+          },
+          {
+            "step": 2,
+            "action": "Select 'Check Challan Status' from the drop-down menu under 'Check Online Service'."
+          },
+          {
+            "step": 3,
+            "action": "Enter the required details: challan number, vehicle number, or driver's license number."
+          },
+          {
+            "step": 4,
+            "action": "Enter the captcha code."
+          },
+          {
+            "step": 5,
+            "action": "Click 'Get Details'."
+          },
+          {
+            "step": 6,
+            "action": "Click 'Pay Now'."
+          },
+          {
+            "step": 7,
+            "action": "Select the payment method."
+          },
+          {
+            "step": 8,
+            "action": "After the transaction is complete, you'll receive a transaction ID."
+          },
+          {
+            "step": 9,
+            "action": "You can also check traffic fines using the mParivahan mobile app."
+          }
+        ]
+      },
+      "ContestingTrafficChallanFines": {
+        "steps": [
+          {
+            "step": 1,
+            "action": "Check the details of the fine on the challan and gather evidence to support your case."
+          },
+          {
+            "step": 2,
+            "action": "File an online or offline representation to the concerned authority within the stipulated time frame."
+          },
+          {
+            "step": 3,
+            "action": "The authority will review your representation and evidence and pass an order."
+          },
+          {
+            "step": 4,
+            "action": "If not satisfied with the decision, file an appeal to a higher authority within the prescribed timelines."
+          },
+          {
+            "step": 5,
+            "action": "The appeal process may involve a personal hearing, after which a final decision will be passed."
+          },
+          {
+            "note": "Adhere to timelines and procedures to avoid rejection of your appeal."
+          }
+        ]
+      },
+      "ConsequencesOfNonPayment": {
+        "details": [
+          "Accumulation of additional fines and penalties.",
+          "Possible legal action including court summons.",
+          "Impounding of vehicle or restrictions on vehicle registration.",
+          "Negative impact on credit rating if fines remain unpaid."
+        ]
+      }
+    },
+    "FreeLegalAidServices": {
+      "Overview": {
+        "ConstitutionalBasis": [
+          "Article 39A provides for free legal aid to the poor and weaker sections.",
+          "Articles 14 and 22(1) ensure equality before law and promote justice."
+        ],
+        "LegalServicesAuthoritiesAct": {
+          "enactedYear": 1987,
+          "enforcedDate": "9th November, 1995",
+          "purpose": "Establish a nationwide network for providing free and competent legal services."
+        },
+        "NALSA": {
+          "description": "National Legal Services Authority (NALSA) monitors and evaluates implementation of legal aid programmes.",
+          "structure": [
+            "State Legal Services Authority",
+            "High Court Legal Services Committee",
+            "District Legal Services Authorities",
+            "Taluk Legal Services Committees",
+            "Supreme Court Legal Services Committee"
+          ]
+        }
+      },
+      "Functions": {
+        "MainFunctions": [
+          "Provide free and competent legal services to eligible persons.",
+          "Organize Lok Adalats for amicable settlement of disputes.",
+          "Conduct legal awareness camps in rural areas."
+        ]
+      },
+      "FreeLegalServices": {
+        "servicesIncluded": [
+          "Payment of court fees and other charges.",
+          "Providing legal representation in proceedings.",
+          "Obtaining certified copies of orders and documents.",
+          "Preparation of appeals and related documents."
+        ],
+        "Eligibility": [
+          "Women and children",
+          "Members of SC/ST",
+          "Industrial workmen",
+          "Victims of mass disasters",
+          "Disabled persons",
+          "Persons in custody",
+          "Annual income not exceeding Rs. 1 lakh (Rs. 5 lakh for Supreme Court)"
+        ]
+      },
+      "LokAdalats": {
+        "description": "A forum for amicable settlement of disputes.",
+        "status": "Statutory status under the Legal Services Authorities Act, 1987.",
+        "bindingEffect": "An award made is deemed a decree of a civil court and is final.",
+        "eLokAdalat": {
+          "description": "Conceptualized for improved access to justice during COVID."
+        }
+      },
+      "LegalAwarenessPrograms": {
+        "description": "Conducted to promote legal literacy.",
+        "targetGroups": [
+          "Schools and colleges",
+          "Women empowerment",
+          "Rural legal literacy camps"
+        ]
+      },
+      "GrantInAid": {
+        "details": [
+          {
+            "year": "2021-22",
+            "amountDisbursed": 145,
+            "purpose": "Functions as Central Authority under the Legal Services Authorities Act."
+          },
+          {
+            "year": "2022-23",
+            "amountDisbursed": 190
+          }
+        ]
+      }
+    },
+    "RTIApplicationProcess": {
+      "FilingMethods": {
+        "Online": {
+          "description": "You can file an RTI application online for the DoJ through the eFiling portal.",
+          "steps": [
+            {
+              "step": 1,
+              "action": "Provide details like your name, address, email address, and phone number."
+            },
+            {
+              "step": 2,
+              "action": "Include a description of the information sought and any supporting documents."
+            },
+            {
+              "step": 3,
+              "action": "Pay the prescribed fee."
+            },
+            {
+              "step": 4,
+              "action": "Submit the application."
+            }
+          ],
+          "link": "https://doj.gov.in/efiling/#:~:text=eFiling%20%7C%20Department%20of%20Justice%20%7C%20India"
+        },
+        "ByPostEmailInPerson": {
+          "description": "You can also file an RTI application by post, email, or in person.",
+          "steps": [
+            {
+              "step": 1,
+              "action": "Write your application in English, Hindi, or the official language of the area."
+            },
+            {
+              "step": 2,
+              "action": "Send it to the Public Information Officer (PIO) of the DoJ."
+            },
+            {
+              "step": 3,
+              "action": "Pay the application fee when submitting the application."
+            }
+          ],
+          "link": "https://rtionline.gov.in/guidelines.php?appeal"
+        }
+      }
+    },
+    "FinancialAssistanceForLegalCases": {
+      "ApproachAuthorities": {
+        "Description": "Depending on territorial and subject matter jurisdiction, individuals should approach:",
+        "Authorities": [
+          {
+            "name": "Taluk Legal Services Committee",
+            "location": "In the premises of the Court in that Taluk"
+          },
+          {
+            "name": "District Legal Services Authority",
+            "location": "In the premises of the District Court in the District Headquarters"
+          },
+          {
+            "name": "State Legal Services Authority",
+            "location": "For particular cases maintained at State level"
+          },
+          {
+            "name": "High Court Legal Services Committee",
+            "location": "In the premises of the concerned High Court"
+          },
+          {
+            "name": "Supreme Court Legal Services Committee",
+            "location": "For cases before the Hon’ble Supreme Court"
+          }
+        ],
+        "ApplicationSubmission": "Applications can be submitted at the front office of each authority or online via NALSA's website."
+      },
+      "ApplicationProcess": {
+        "Offline": {
+          "Description": "Fill up a ready-made form available at the nearest Legal Services Authority.",
+          "Details": [
+            "Submit the form physically or by post.",
+            "You can also write a simple application including necessary details."
+          ]
+        },
+        "Online": {
+          "Description": "Send an application via email or the online application form.",
+          "Email": "nalsa-dla@nic.in",
+          "Website": "https://nalsa.gov.in/",
+          "Details": [
+            "Upload necessary documents."
+          ]
+        },
+        "Oral": {
+          "Description": "Make an application orally with assistance from a paralegal volunteer or officer."
+        }
+      },
+      "DocumentationRequired": {
+        "Details": [
+          "Identity proofs.",
+          "Certificates/affidavit as proof for eligibility."
+        ],
+        "OnlineInfo": "Relevant document requirements are provided on NALSA's website."
+      },
+      "Charges": {
+        "Description": "There are no charges for obtaining or submitting the application form for free legal aid.",
+        "LegalAdvice": "You can call or visit the Legal Services Authority office for legal advice without cost."
+      },
+      "AssistanceForIlliterate": {
+        "Description": "Illiterate persons can be assisted by Legal Services Authorities or para-legal volunteers.",
+        "Process": "Volunteers can fill out forms for applicants, who just need to affix their signature or thumb impression."
+      },
+      "Expenses": {
+        "Description": "No expenses for process fees, drafting, typing, clerkage, or lawyer fees are incurred by the applicant."
+      },
+      "Timings": {
+        "NALSA": {
+          "Days": "Monday to Friday",
+          "Hours": "9:30 am to 6 pm"
+        },
+        "Online": {
+          "Availability": "24 x 7"
+        },
+        "OtherAuthorities": {
+          "Description": "Check respective websites for office hours."
+        }
+      }
+    },
+    "JudicialReforms": {
+      "ProceduralLawAmendments": {
+        "Description": "Amendments introduced to speed up the disposal of civil and criminal cases.",
+        "KeyChanges": [
+          "Limiting the number of adjournments that can be granted to each party in civil trials.",
+          "Allowing the service of summons by email, fax, speed post, courier, or directly through the plaintiff.",
+          "Allowing the use of audio and video technology in criminal cases."
+        ]
+      },
+      "NationalMissionForJudicialReforms": {
+        "Description": "The NMJR Division focuses on reducing pendency, improving ease of doing business, and developing infrastructure for subordinate courts."
+      },
+      "FastTrackSpecialCourts": {
+        "Description": "Scheme to set up special courts for the speedy trial of sensitive cases.",
+        "CurrentStatus": {
+          "FunctionalFTSCs": 755,
+          "StatesAndUTs": 30
+        }
+      },
+      "EcourtProject": {
+        "Description": "Initiative to computerize various courts across the country."
+      },
+      "LegalAid": {
+        "Description": "The DoJ provides legal aid to the poor and aims to improve access to justice."
+      }
+    },
+    "CentrallySponsoredScheme": {
+      "Description": "Scheme for the development of infrastructure facilities for the judiciary since 1993-94.",
+      "FinancialOutlay": {
+        "Total": "Rs. 9000 Cr",
+        "CentralShare": "Rs. 5307 Cr"
+      },
+      "NewFeatures": [
+        "Provision of Lawyers Halls",
+        "Toilet complexes",
+        "Digital computer rooms"
+      ],
+      "FundSharingPattern": {
+        "NorthEasternAndHimalayanStates": "90:10 (Centre: State)",
+        "RemainingStates": "60:40",
+        "UnionTerritories": "100% assistance"
+      },
+      "EligibilityCriteria": [
+        "Implementation of revised PFMS procedure",
+        "Submission of utilization of funds",
+        "Unspent balance less than 25%",
+        "Indication of project start and end dates",
+        "Submission of clearance certificates",
+        "Geo-tagging of projects"
+      ]
+    },
+    "NationalMission": {
+      "Objectives": [
+        "Increasing access by reducing delays and arrears",
+        "Enhancing accountability through structural changes"
+      ],
+      "TimeFrame": {
+        "Original": "5 years",
+        "Extended": "1 April 2021 to 31 March 2026"
+      }
+    },
+    "StepsForTimelyEnforcement": {
+      "CommercialBenches": "Set up in Delhi and Bombay High Courts.",
+      "PecuniaryJurisdiction": "Reduced to Rs 3 lakhs from Rs. 1 crore.",
+      "RandomAllocation": "Automatic allocation of cases in Dedicated Commercial Courts.",
+      "ElectronicCaseManagementTools": "Introduced for judges and lawyers.",
+      "AdjournmentRule": "Compliance with maximum three adjournment rules enforced.",
+      "MediationCenters": "Established in 13 High Courts.",
+      "EfilingService": "Launched in Dedicated Commercial Courts of Delhi and Mumbai.",
+      "ESummons": "Facilitates sending e-summons via emails/SMS."
+    },
+    "ActionResearchScheme": {
+      "Eligibility": [
+        "IIPA",
+        "ASCI",
+        "IIMs",
+        "ILI",
+        "NLUs",
+        "NCAER",
+        "NJA",
+        "SJAs"
+      ],
+      "Guidelines": "Available at https://doj.gov.in/guidelines"
+    },
+    "RuleOfLawIndex": {
+      "Description": "Measures the rule of law in practice based on accountability, laws, process, and access to justice.",
+      "CurrentRank": {
+        "2021": 79,
+        "2020": 69,
+        "BestRank": 62
+      }
+    },
+    "DataGovernanceQualityIndex": {
+      "Description": "Enhances data preparedness and development of data systems.",
+      "Benefits": "Facilitates data-driven decision making."
+    },
+    "Courts": {
+      "SupremeCourt": {
+        "Name": "Supreme Court of India",
+        "Link": "https://main.sci.gov.in/display-board"
+      },
+      "HighCourts": [
+        {
+          "Name": "Gujarat High Court",
+          "Link": "https://gujarathighcourt.nic.in/streamingboard/"
+        },
+        {
+          "Name": "Gauhati High Court",
+          "Link": "https://ghconline.gov.in/index.php/live-streaming-of-court-proceedings-1/"
+        },
+        {
+          "Name": "Jharkhand High Court",
+          "Link": "https://jharkhandhighcourt.nic.in/live-streaming-courts-proceeding"
+        },
+        {
+          "Name": "Karnataka High Court",
+          "Link": "https://youtube.com/c/HighCourtofKarnatakaOfficial"
+        },
+        {
+          "Name": "Madhya Pradesh High Court",
+          "Link": "https://youtube.com/channel/UCCIVFftzmBqzBKoijOmIl1A"
+        },
+        {
+          "Name": "Orissa High Court",
+          "Link": "https://www.youtube.com/channel/UCtTgN30THhZfQ6sQ_v3KBHQ"
+        },
+        {
+          "Name": "Patna High Court",
+          "Link": "https://www.youtube.com/channel/UCvb5s5UdLjpaiDpBeaCxVEw"
+        }
+      ]
+    },
+      "Know about which cases are eligible for live streaming. (Send latest 5)": {
+          "17-09-2024": {
+              "date": "17-09-2024",
+              "link": "https://www.youtube.com/embed/aM9s_lVngb4?rel=0"
+          },
+          "13-09-2024": {
+              "date": "13-09-2024",
+              "link": "https://www.youtube.com/embed/YMjdNKXe_r0?rel=0"
+          },
+          "12-09-2024": {
+              "date": "12-09-2024",
+              "link": "https://www.youtube.com/embed/CRLelol7bDg?rel=0"
+          },
+          "09-09-2024": {
+              "date": "09-09-2024",
+              "link": "https://www.youtube.com/embed/Y1x1Is_zqp8?rel=0"
+          },
+          "30-08-2024-Session-1": {
+              "date": "30-08-2024",
+              "link": "https://www.youtube.com/embed/dQ2tGe9qJJY?rel=0"
+          },
+          "30-08-2024-Session-2": {
+              "date": "30-08-2024",
+              "link": "https://www.youtube.com/embed/oAwE_p6d1DA?rel=0"
+          },
+          "29-08-2024": {
+              "date": "29-08-2024",
+              "link": "https://www.youtube.com/embed/-Qw-KeuL6XI?rel=0"
+          },
+          "28-08-2024": {
+              "date": "28-08-2024",
+              "link": "https://www.youtube.com/embed/sJTsMrdkrvQ?rel=0"
+          },
+          "27-08-2024": {
+              "date": "27-08-2024",
+              "link": "https://www.youtube.com/embed/rM8M2ivuNP4?rel=0"
+          },
+          "14-08-2024": {
+              "date": "14-08-2024",
+              "link": "https://www.youtube.com/embed/L-XT3hmolds?rel=0"
+          },
+          "07-08-2024-Session-1": {
+              "date": "07-08-2024",
+              "link": "https://www.youtube.com/embed/-0dVzF2qGgo?rel=0"
+          },
+          "07-08-2024-Session-2": {
+              "date": "07-08-2024",
+              "link": "https://www.youtube.com/embed/ibry_ix0JnE?rel=0"
+          },
+          "07-08-2024-Session-3": {
+              "date": "07-08-2024",
+              "link": "https://www.youtube.com/embed/rM8M2ivuNP4?rel=0"
+          },
+          "03-08-2024": {
+              "date": "03-08-2024",
+              "link": "https://www.youtube.com/embed/yNQYqNi1ss8?rel=0"
+          },
+          "01-08-2024": {
+              "date": "01-08-2024",
+              "link": "https://www.youtube.com/embed/jrbN24rJ100?rel=0"
+          },
+          "31-07-2024": {
+              "date": "31-07-2024",
+              "link": "https://www.youtube.com/embed/Li-lUDjO9TI?rel=0"
+          },
+          "25-07-2024": {
+              "date": "25-07-2024",
+              "link": "https://www.youtube.com/embed/cit-VTZiyFk?rel=0"
+          },
+          "23-07-2024": {
+              "date": "23-07-2024",
+              "link": "https://www.youtube.com/embed/7hmMOAf5nho?rel=0"
+          },
+          "22-07-2024": {
+              "date": "22-07-2024",
+              "link": "https://www.youtube.com/embed/e-nl7jaUHVI?rel=0"
+          },
+          "18-07-2024-Session-1": {
+              "date": "18-07-2024",
+              "link": "https://www.youtube.com/embed/BNsOZvU3AJ4?rel=0"
+          },
+          "18-07-2024-Session-2": {
+              "date": "18-07-2024",
+              "link": "https://www.youtube.com/embed/Zq0w3oeSNUM?rel=0"
+          },
+          "16-07-2024": {
+              "date": "16-07-2024",
+              "link": "https://www.youtube.com/embed/9BjtzG4jEMM?rel=0"
+          },
+          "11-07-2024": {
+              "date": "11-07-2024",
+              "link": "https://www.youtube.com/embed/j48Z2NJea3o?rel=0"
+          },
+          "17-05-2024": {
+              "date": "17-05-2024",
+              "link": "https://www.youtube.com/embed/InVtyFQbvG0?rel=0"
+          },
+          "08-05-2024": {
+              "date": "08-05-2024",
+              "link": "https://www.youtube.com/embed/l9kmtaKn8uA?rel=0"
+          },
+          "01-05-2024": {
+              "date": "01-05-2024",
+              "link": "https://www.youtube.com/embed/c4pDCzsiVoM?rel=0"
+          },
+          "30-04-2024": {
+              "date": "30-04-2024",
+              "link": "https://www.youtube.com/embed/u7vdoNS33PA?rel=0"
+          },
+          "25-04-2024": {
+              "date": "25-04-2024",
+              "link": "https://www.youtube.com/embed/DC-tK5uPCI4?rel=0"
+          },
+          "24-04-2024": {
+              "date": "24-04-2024",
+              "link": "https://www.youtube.com/embed/QG0jF859eIY?rel=0"
+          },
+          "23-04-2024": {
+              "date": "23-04-2024",
+              "link": "https://www.youtube.com/embed/7scTgf6MT1Q?rel=0"
+          },
+          "18-04-2024": {
+              "date": "18-04-2024",
+              "link": "https://www.youtube.com/embed/iGrc_0KiVXM?rel=0"
+          },
+          "16-04-2024-Session-1": {
+              "date": "16-04-2024",
+              "link": "https://www.youtube.com/embed/HJYUA1BluJ4?rel=0"
+          },
+          "16-04-2024-Session-2": {
+              "date": "16-04-2024",
+              "link": "https://www.youtube.com/embed/SXXkRepwjJ8?rel=0"
+          },
+          "10-04-2024": {
+              "date": "10-04-2024",
+              "link": "https://www.youtube.com/embed/Zj-PNeKF3aM?rel=0"
+          },
+          "09-04-2024": {
+              "date": "09-04-2024",
+              "link": "https://www.youtube.com/embed/fDtShBUR7JY?rel=0"
+          },
+          "04-04-2024-Session-1": {
+              "date": "04-04-2024",
+              "link": "https://www.youtube.com/embed/Q1yh9GnAziQ?rel=0"
+          },
+          "04-04-2024-Session-2": {
+              "date": "04-04-2024",
+              "link": "https://www.youtube.com/embed/wPfTD7Yz2EY?rel=0"
+          },
+          "03-04-2024": {
+              "date": "03-04-2024",
+              "link": "https://www.youtube.com/embed/qns3DyQVkj8?rel=0"
+          },
+          "02-04-2024": {
+              "date": "02-04-2024",
+              "link": "https://www.youtube.com/embed/xqlAvLPnv94?rel=0"
+          },
+          "18-03-2024": {
+              "date": "18-03-2024",
+              "link": "https://www.youtube.com/embed/PVABVuNNReQ?rel=0"
+          },
+          "15-03-2024": {
+              "date": "15-03-2024",
+              "link": "https://www.youtube.com/embed/TuvPAZWw9ag?rel=0"
+          },
+          "14-03-2024": {
+              "date": "14-03-2024",
+              "link": "https://www.youtube.com/embed/9D-B9xQh1sU?rel=0"
+          },
+          "13-03-2024": {
+              "date": "13-03-2024",
+              "link": "https://www.youtube.com/embed/8u0vGuSSoQs?rel=0"
+          },
+          "12-03-2024": {
+              "date": "12-03-2024",
+              "link": "https://www.youtube.com/embed/sQrG6vRQjPg?rel=0"
+          },
+          "11-03-2024": {
+              "date": "11-03-2024",
+              "link": "https://www.youtube.com/embed/fcJuqNAGCBg?rel=0"
+          },
+          "06-03-2024": {
+              "date": "06-03-2024",
+              "link": "https://www.youtube.com/embed/fTHfxj52XEU?rel=0"
+          },
+          "05-03-2024": {
+              "date": "05-03-2024",
+              "link": "https://www.youtube.com/embed/F-Otcfzfu8s?rel=0"
+          },
+          "04-03-2024": {
+              "date": "04-03-2024",
+              "link": "https://www.youtube.com/embed/2DpJFt9TzwQ?rel=0"
+          },
+          "29-02-2024-Session-1": {
+              "date": "29-02-2024",
+              "link": "https://www.youtube.com/embed/b_aOBT3eY9o?rel=0"
+          },
+          "29-02-2024-Session-2": {
+              "date": "29-02-2024",
+              "link": "https://www.youtube.com/embed/dvQ7pO8q6w4?rel=0"
+          },
+          "27-02-2024": {
+              "date": "27-02-2024",
+              "link": "https://www.youtube.com/embed/RUjH_s4-uH4?rel=0"
+          },
+          "26-02-2024": {
+              "date": "26-02-2024",
+              "link": "https://www.youtube.com/embed/6e2mqTJtzks?rel=0"
+          },
+          "24-02-2024": {
+              "date": "24-02-2024",
+              "link": "https://www.youtube.com/embed/V2tZBVDUUmw?rel=0"
+          }
+      }
+  }
