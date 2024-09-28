@@ -12,6 +12,7 @@
     "@daily-co/daily-react": "^0.20.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@headlessui/react": "^2.1.8",
     "@nextui-org/avatar": "^2.0.33",
     "@nextui-org/badge": "^2.0.32",
     "@nextui-org/button": "^2.0.38",
@@ -19,6 +20,7 @@
     "@nextui-org/input": "^2.2.5",
     "@nextui-org/modal": "^2.0.41",
     "@nextui-org/progress": "^2.0.34",
+    "@nextui-org/react": "^2.4.8",
     "@radix-ui/react-avatar": "^1.1.0",
     "@radix-ui/react-scroll-area": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
@@ -29,6 +31,8 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.3.0",
+    "file-saver": "^2.0.5",
+    "framer-motion": "^11.9.0",
     "lucide-react": "^0.436.0",
     "next": "^14.2.13",
     "next-auth": "^4.24.7",
@@ -46,6 +50,7 @@
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

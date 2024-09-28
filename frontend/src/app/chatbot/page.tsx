@@ -9,15 +9,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Scale, FileText, Sun, Moon } from "lucide-react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LegalResources from './LegalResources'
 import styles from "./page.module.css";
 import ConversationSummary from "./ConversationSummary"; // Adjust the import path as needed
 import Quiz from "./Quiz"; // Adjust the import path as needed
 
 const renderMessageContent = (content: any): JSX.Element => {
   if (typeof content === "string") {
-    // Split by new lines and format
     const lines = content.split("\n").map((line, index) => {
-      // Check if line is a heading (you can adjust the criteria for headings as needed)
       if (line.startsWith("**") && line.endsWith("**")) {
         const heading = line.replace(/\*\*/g, ""); // Remove the asterisks
         return (
@@ -34,7 +33,7 @@ const renderMessageContent = (content: any): JSX.Element => {
       <ul>
         {content.map((item, index) => (
           <li key={index}>{renderMessageContent(item)}</li>
-        ))}
+        ))} 
       </ul>
     );
   } else if (typeof content === "object" && content !== null) {
@@ -52,12 +51,14 @@ const renderMessageContent = (content: any): JSX.Element => {
   return <p>{String(content)}</p>;
 };
 
+
+
+
 export default function ChatbotInterface() {
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      content:
-        "Welcome to the Department of Justice AI Assistant. How can I help you today?",
+      content: "Welcome to the Department of Justice AI Assistant. How can I help you today?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -68,6 +69,7 @@ export default function ChatbotInterface() {
   });
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [connectionStatus, setConnectionStatus] = useState("disconnected"); // Track connection status
+  const [showLegalResources, setShowLegalResources] = useState(false); // Track the visibility of legal resources
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
@@ -77,7 +79,7 @@ export default function ChatbotInterface() {
     try {
       const response = await fetch("http://localhost:5000/chat");
       if (response.ok) {
-        setConnectionStatus("connected"); // Update state based on response
+        setConnectionStatus("connected");
       } else {
         setConnectionStatus("disconnected");
       }
@@ -87,13 +89,39 @@ export default function ChatbotInterface() {
   };
 
   useEffect(() => {
-    checkConnection(); // Check connection on load
-    const intervalId = setInterval(checkConnection, 10000); // Check connection every 10 seconds
+    checkConnection();
+    const intervalId = setInterval(checkConnection, 10000);
     return () => clearInterval(intervalId);
   }, []);
   const [conversationHistory, setConversationHistory] = useState<
-    Array<{ user: string; bot: string }>
-  >([]);
+  Array<{ user: string; bot: string }>
+>([]);
+
+  useEffect(() => {
+    if (showLegalResources) {
+      animateCount(65361, 2000, 'count1');
+      animateCount(17813, 2000, 'count2');
+      animateCount(83174, 2000, 'count3');
+    }
+  }, [showLegalResources]);
+
+  const animateCount = (target: number, duration: number, elementId: string) => {
+    const start = 0;
+    const end = target;
+    const increment = Math.ceil(end / (duration / 100));
+    let currentCount = start;
+    const countElement = document.getElementById(elementId);
+
+    const interval = setInterval(() => {
+      currentCount += increment;
+      if (currentCount >= end) {
+        if (countElement) countElement.innerText = end.toString();
+        clearInterval(interval);
+      } else {
+        if (countElement) countElement.innerText = currentCount.toString();
+      }
+    }, 100);
+  };
 
   const handleSend = async () => {
     if (input.trim()) {
@@ -120,7 +148,6 @@ export default function ChatbotInterface() {
         const data = await response.json();
         const botMsg = data.res.msg;
 
-        // Update messages
         setMessages((prev) => [
           ...prev,
           {
@@ -158,6 +185,7 @@ export default function ChatbotInterface() {
       }
     }
   };
+
   return (
     <div
       className={`flex flex-col h-screen ${
@@ -167,7 +195,6 @@ export default function ChatbotInterface() {
       <header className="bg-[#0047AB] text-white py-4 px-6">
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-extrabold">DoJ AI Assistant</h1>
-          {/* Connection Status Indicator */}
           <div className="flex items-center space-x-2">
             <div
               className={`w-3 h-3 rounded-full ${
@@ -316,17 +343,8 @@ export default function ChatbotInterface() {
               </TabsContent>
 
               <TabsContent value="legal-resources">
-                <h2 className="text-xl font-semibold mb-2">Legal Resources</h2>
-                <p className="text-sm">
-                  Access various legal resources and forms. Visit the{" "}
-                  <a
-                    href="/legal-resources"
-                    className="text-blue-500 hover:underline"
-                  >
-                    Legal Resources Hub
-                  </a>
-                  .
-                </p>
+               
+                <LegalResources />
               </TabsContent>
             </Tabs>
           </CardBody>
@@ -350,3 +368,5 @@ export default function ChatbotInterface() {
     </div>
   );
 }
+
+
