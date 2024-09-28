@@ -4,7 +4,7 @@ from langgraph.checkpoint.memory import MemorySaver
 from langgraph.prebuilt import create_react_agent
 from langchain_google_genai import ChatGoogleGenerativeAI
 from pymongo import MongoClient
-from bot_tools import check_divisions,get_judicial_infrastructure_scheme,get_doj_functions_responsibilities, get_free_legal_aid_info,get_case_resolution_time,get_disposal_last_month_cases,get_instituted_last_month_cases, get_instituted_current_year_cases, get_coram_wise_pending_cases,get_cases_info, get_ac_info, get_case_statistics,get_traffic_violation_payments,get_judicial_system_and_vacancies,get_judicial_system_info,get_case_resolution_time,get_ecourts_info,get_ecourts_app_info,get_judgment_search_and_fast_track_info, get_efiling_and_fast_track_info,get_telelaw_services_info,get_traffic_fine_procedures_info,get_court_live_stream_info,get_free_legal_aid_info,get_rti_and_financial_assistance_info,get_judicial_reform_info,search_judicial_appointments
+from bot_tools import check_divisions,get_judicial_infrastructure_scheme,get_doj_functions_responsibilities, get_free_legal_aid_info,get_case_resolution_time,get_disposal_last_month_cases,get_instituted_last_month_cases, get_instituted_current_year_cases, get_coram_wise_pending_cases,get_cases_info, get_case_statistics,get_traffic_violation_payments,get_judicial_system_and_vacancies,get_judicial_system_info,get_case_resolution_time,get_ecourts_info,get_ecourts_app_info,get_judgment_search_and_fast_track_info, get_efiling_and_fast_track_info,get_telelaw_services_info,get_traffic_fine_procedures_info,get_court_live_stream_info,get_free_legal_aid_info,get_rti_and_financial_assistance_info,get_judicial_reform_info,search_judicial_appointments,check_case_with_CNR
 # Google Gemini AI (LangChain-based LLM) for conversation and extraction
 llm = ChatGoogleGenerativeAI(
     model="gemini-1.5-flash",
@@ -30,7 +30,7 @@ tools = [
     check_divisions,get_judicial_infrastructure_scheme,get_doj_functions_responsibilities, get_free_legal_aid_info,
     get_case_resolution_time,  get_disposal_last_month_cases,
     get_instituted_last_month_cases, get_instituted_current_year_cases, get_coram_wise_pending_cases,
-    get_cases_info, get_ac_info, get_case_statistics,get_traffic_violation_payments,get_judicial_system_and_vacancies,get_judicial_system_info,get_case_resolution_time,get_ecourts_info,get_ecourts_app_info,get_judgment_search_and_fast_track_info, get_efiling_and_fast_track_info,get_telelaw_services_info,get_traffic_fine_procedures_info,get_court_live_stream_info,get_free_legal_aid_info,get_rti_and_financial_assistance_info,get_judicial_reform_info,search_judicial_appointments
+    get_cases_info, get_case_statistics,get_traffic_violation_payments,get_judicial_system_and_vacancies,get_judicial_system_info,get_case_resolution_time,get_ecourts_info,get_ecourts_app_info,get_judgment_search_and_fast_track_info, get_efiling_and_fast_track_info,get_telelaw_services_info,get_traffic_fine_procedures_info,get_court_live_stream_info,get_free_legal_aid_info,get_rti_and_financial_assistance_info,get_judicial_reform_info,search_judicial_appointments,check_case_with_CNR
 ]
 
 def print_stream(graph, inputs, config):
@@ -80,10 +80,16 @@ def ChatModel(id, msg):
     try:
         # Use the agent to generate a response
         res = print_stream(graph, inputs, config)
-        return {"res": res, "info": res["toolCall"]}
+        
+        # Print the entire response for debugging
+        print(f"ChatModel Response: {res}")
+
+        tool_info = res.get("toolCall", {})  # Safely get 'toolCall' key
+        return {"res": res, "info": tool_info}
     except Exception as e:
         print(f"Error in ChatModel: {e}")
-        return {"res": {"msg": "I apologize, but an error occurred. Could you please rephrase your question or try again?", "toolCall": {}}}
+        return {"res": {"msg": "I apologize, but an error occurred. Could you please rephrase your question or try again?"}, "info": {}}
+
 
 # Assuming the LLM and graph setup remains the same as before
 
@@ -92,6 +98,7 @@ graph = create_react_agent(llm, tools, checkpointer=MemorySaver(), state_modifie
 You are an AI-powered chatbot specifically designed to assist users with a wide variety of queries related to the Department of Justice (DoJ) in India. You provide information, guidance, and support to users on topics that include but are not limited to the Indian legal system, judiciary processes, rights, and legal aid. Your capabilities and responsibilities include:
                            
 You should utilize the following tools to assist users effectively:
+- **check_case_with_CNR**: retrieves case information using a CNR number, sends a POST request to the eCourts India service, saves the HTML response, and uses UnstructuredHTMLLoader to extract and return structured case details like status, type, and court information.
 - **check_divisions**: Provides information on the DoJ divisions.
 - **get_judicial_infrastructure_scheme**: Details about judicial infrastructure schemes.
 - **get_doj_functions_responsibilities**: Outlines the functions and responsibilities of the DoJ.
@@ -102,7 +109,6 @@ You should utilize the following tools to assist users effectively:
 - **get_instituted_current_year_cases**: Current year's instituted cases statistics.
 - **get_coram_wise_pending_cases**: Details on pending cases by coram.
 - **get_cases_info**: Information on specific cases.
-- **get_ac_info**: Information about Assistant Counsels.
 - **get_case_statistics**: General case statistics.
 - **get_traffic_violation_payments**: Information on traffic violation payments.
 - **get_judicial_system_and_vacancies**: Information on the judicial system and vacancies.
@@ -157,6 +163,8 @@ You should always maintain a professional, polite, and approachable demeanor in 
 
 First list out all the important points needed according to the user's prompt into concize points, after that privde explanation for each point in points , follow the formatting of heading , subheading and content whenever possible, bold the headings. Use bloding whenever possible and needed.If any links are there then provide them as it is.
                            
+Format: follow the format which is best suitable for React Markdown, blod the places whereever u feel there is a need.
+                       
 '''
 )
 
