@@ -11,6 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./page.module.css";
 import ConversationSummary from "./ConversationSummary"; // Adjust the import path as needed
+import Quiz from "./Quiz"; // Adjust the import path as needed
 
 const renderMessageContent = (content: any): JSX.Element => {
   if (typeof content === "string") {
@@ -268,11 +269,6 @@ export default function ChatbotInterface() {
             borderRadius: "1.2rem",
           }}
         >
-          <CardHeader>
-            <CardHeader className="font-black text-[50px] text-center align-middle items-center">
-              Information
-            </CardHeader>
-          </CardHeader>
           <CardBody>
             <Tabs defaultValue="summary">
               <TabsList className="grid w-full grid-cols-2 mb-[50px]">
@@ -316,17 +312,7 @@ export default function ChatbotInterface() {
 
               <TabsContent value="rights-awareness">
                 <h2 className="text-xl font-semibold mb-2">Know Your Rights</h2>
-                <p className="text-sm">
-                  Learn about your rights when interacting with law enforcement.
-                  Click{" "}
-                  <a
-                    href="/rights-awareness"
-                    className="text-blue-500 hover:underline"
-                  >
-                    here
-                  </a>{" "}
-                  for more.
-                </p>
+                <Quiz /> {/* Include the Quiz component */}
               </TabsContent>
 
               <TabsContent value="legal-resources">
