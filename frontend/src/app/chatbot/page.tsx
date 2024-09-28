@@ -307,7 +307,7 @@ export default function ChatbotInterface() {
                   value="rights-awareness"
                   className="rounded-lg border mr-1 border-gray-400"
                 >
-                  Know Your Rights
+                  Check Case Status
                 </TabsTrigger>
                 <TabsTrigger
                   value="legal-resources"
@@ -330,8 +330,9 @@ export default function ChatbotInterface() {
               </TabsContent>
 
               <TabsContent value="rights-awareness">
-                <h2 className="text-xl font-semibold mb-2">Know Your Rights</h2>
-                <CaseStatusChecker/>
+                <h2 className="text-xl font-semibold mb-2">Check Case Status</h2>
+                <CaseStatusChecker
+                isDarkMode={isDarkMode}/>
               </TabsContent>
 
               <TabsContent value="legal-resources">
