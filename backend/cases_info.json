@@ -1,0 +1,39 @@
+{
+    "Overall Case Information": [
+        "Pending Civil Cases Cases: 65361",
+        "Pending Criminal Cases Cases: 17813",
+        "Total Pending Cases Cases: 83174"
+    ],
+    "Registered and Unregistered Cases": [
+        {
+            "Category": "Pending Civil Cases",
+            "Registered Cases": "52584",
+            "Unregistered Cases": "12777"
+        },
+        {
+            "Category": "Pending Criminal Cases",
+            "Registered Cases": "52584",
+            "Unregistered Cases": "12777"
+        },
+        {
+            "Category": "Pending Civil Cases",
+            "Registered Cases": "14503",
+            "Unregistered Cases": "3310"
+        },
+        {
+            "Category": "Pending Criminal Cases",
+            "Registered Cases": "14503",
+            "Unregistered Cases": "3310"
+        },
+        {
+            "Category": "Pending Civil Cases",
+            "Registered Cases": "67087",
+            "Unregistered Cases": "16087"
+        },
+        {
+            "Category": "Pending Criminal Cases",
+            "Registered Cases": "67087",
+            "Unregistered Cases": "16087"
+        }
+    ]
+}
