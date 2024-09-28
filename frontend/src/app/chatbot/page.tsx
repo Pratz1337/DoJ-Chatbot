@@ -329,22 +329,21 @@ export default function ChatbotInterface() {
                 <h2 className="text-xl font-semibold mb-2">Summary</h2>
                 <ConversationSummary
                   conversationHistory={conversationHistory}
-                />{" "}
-                {/* Pass the conversation history here */}
+                  isDarkMode={isDarkMode}
+                />
               </TabsContent>
 
               <TabsContent value="fine-procedures">
-                <FineProceduresTab />
+                <FineProceduresTab isDarkMode={isDarkMode} />
               </TabsContent>
 
               <TabsContent value="rights-awareness">
                 <h2 className="text-xl font-semibold mb-2">Know Your Rights</h2>
-                <Quiz /> {/* Include the Quiz component */}
+                <Quiz isDarkMode={isDarkMode} />
               </TabsContent>
 
               <TabsContent value="legal-resources">
-               
-                <LegalResources />
+                <LegalResources isDarkMode={isDarkMode} />
               </TabsContent>
             </Tabs>
           </CardBody>
@@ -368,5 +367,3 @@ export default function ChatbotInterface() {
     </div>
   );
 }
-
-
