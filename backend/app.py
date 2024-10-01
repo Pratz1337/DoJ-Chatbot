@@ -25,8 +25,8 @@ conversation_history = []
 # Create a Google Gemini LLM instance for summarization
 summary_llm = ChatGoogleGenerativeAI(
     model="gemini-1.5-flash",
-    temperature=0.5,  # Adjust the temperature for more creative summaries
-    max_tokens=800,   # Adjust the token length for your summaries
+    temperature=0.5,
+    max_tokens=800,
     timeout=None,
     max_retries=2,
     google_api_key="AIzaSyDIG-JhAjoTJPZV_M5CGzjhIX8klNbXm3I"
@@ -38,12 +38,12 @@ def home():
 
 def clean_summary(raw_summary):
     # Replace headings '##' with a formatted title
-    clean_text = re.sub(r"##\s*(.+)", r"\1\n", raw_summary)
+    clean_text = re.sub(r"##\s*(.+)", r"## \1", raw_summary)
 
     # Replace bold '**' with normal text
-    clean_text = re.sub(r"\*\*(.+?)\*\*", r"\1", clean_text)
+    clean_text = re.sub(r"\*\*(.+?)\*\*", r"**\1**", clean_text)
 
-    # Replace bullet points '*' with '-' (optional) or leave them out for cleaner text
+    # Replace bullet points '*' with '-'
     clean_text = re.sub(r"\*\s*", "- ", clean_text)
 
     return clean_text
@@ -58,13 +58,12 @@ def format_summary_for_chat(summary):
         if not stripped_line:
             continue
         
-        if stripped_line.endswith(':'):
-            if len(stripped_line) > 30:  # Longer lines as main headings
-                formatted_content.append(f"\n### {stripped_line}\n")
-            else:
-                formatted_content.append(f"\n#### {stripped_line}\n")
-        elif stripped_line.startswith('•') or stripped_line.startswith('-'):
-            formatted_content.append(f"- {stripped_line[1:].strip()}")
+        if stripped_line.startswith('##'):
+            formatted_content.append(f"\n{stripped_line}\n")
+        elif stripped_line.startswith('###'):
+            formatted_content.append(f"\n{stripped_line}\n")
+        elif stripped_line.startswith('-'):
+            formatted_content.append(stripped_line)
         else:
             formatted_content.append(stripped_line)
 
@@ -83,27 +82,16 @@ def chat():
         if not user_message:
             return jsonify({"error": "Message is required!"}), 400
 
-        # Find the tool name based on the user query
         tool_name = find_tool_based_on_query(user_message)
-        
-        # Get information about the selected tool, if applicable
         tool_info = get_tool_info(tool_name) if tool_name else {}
-        print(tool_info)
 
-        # Combine user message with tool information to create the enhanced prompt
         enhanced_prompt = f"User message: {user_message}\nTool information: {tool_info}"
 
-        # Get the chatbot response
         response = ChatModel(user_id, enhanced_prompt)
         
-        # Debugging: Print the response to see its structure
-        print("Response:", response)
-        
-        # Use `.get()` method to handle missing keys
         formatted_response = format_summary_for_chat(response['res']['msg'])
-        info = response.get('info', 'No additional information')  # Default value if 'info' is missing
+        info = response.get('info', 'No additional information')
 
-        # Add the interaction to the conversation history
         conversation_history.append({"user": user_message, "bot": formatted_response})
 
         return jsonify({
@@ -113,7 +101,6 @@ def chat():
             "info": info,
             "selected_tool": tool_name
         })
-
 
 @app.route('/generate-summary', methods=['POST'])
 def generate_summary():
