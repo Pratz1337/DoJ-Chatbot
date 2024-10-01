@@ -1,6 +1,6 @@
 "use client";
 import FineProceduresTab from "./FineProceduresTab"; // Adjust the import path as needed
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@nextui-org/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
@@ -14,11 +14,48 @@ import styles from "./page.module.css";
 import ConversationSummary from "./ConversationSummary"; // Adjust the import path as needed
 import CaseStatusChecker from "./CaseStatus";
 import ReactMarkdown from "react-markdown"; // Import React Markdown
+const MarkdownComponents = {
+  h1: (props: React.HTMLProps<HTMLHeadingElement>) => (
+    <h1
+      style={{ fontWeight: "bold", fontSize: "2em", marginBottom: "10px" }}
+      {...props}
+    />
+  ),
+  h2: (props: React.HTMLProps<HTMLHeadingElement>) => (
+    <h2
+      style={{ fontWeight: "bold", fontSize: "1.75em", marginBottom: "8px" }}
+      {...props}
+    />
+  ),
+  h3: (props: React.HTMLProps<HTMLHeadingElement>) => (
+    <h3
+      style={{ fontWeight: "bold", fontSize: "1.5em", marginBottom: "6px" }}
+      {...props}
+    />
+  ),
+  p: (props: React.HTMLProps<HTMLParagraphElement>) => (
+    <p style={{ margin: "10px 0" }} {...props} />
+  ),
+  ul: (props: React.HTMLProps<HTMLUListElement>) => (
+    <ul style={{ marginLeft: "20px" }} {...props} />
+  ),
+  li: (props: React.HTMLProps<HTMLLIElement>) => (
+    <li style={{ marginBottom: "5px" }} {...props} />
+  ),
+  strong: (props: React.HTMLProps<HTMLElement>) => (
+    <strong style={{ fontWeight: "bold" }} {...props} />
+  ),
+};
 
+// Function to render message content
+// Function to render message content
 const renderMessageContent = (content: any): JSX.Element => {
   if (typeof content === "string") {
-    return <ReactMarkdown>{content}</ReactMarkdown>; // Render content using ReactMarkdown
+    return (
+      <ReactMarkdown components={MarkdownComponents}>{content}</ReactMarkdown>
+    );
   } else if (Array.isArray(content)) {
+    // Rendering an array of content (e.g., list)
     return (
       <ul>
         {content.map((item, index) => (
@@ -27,10 +64,11 @@ const renderMessageContent = (content: any): JSX.Element => {
       </ul>
     );
   } else if (typeof content === "object" && content !== null) {
+    // Rendering an object with key-value pairs
     return (
       <div>
         {Object.entries(content).map(([key, value], index) => (
-          <div key={index}>
+          <div key={index} style={{ marginBottom: "10px" }}>
             <strong>{key}: </strong>
             {renderMessageContent(value)}
           </div>
@@ -38,8 +76,11 @@ const renderMessageContent = (content: any): JSX.Element => {
       </div>
     );
   }
+  // Default fallback for unexpected types
   return <p>{String(content)}</p>;
 };
+
+// Inside ChatbotInterface, you can then use this to render messages
 
 export default function ChatbotInterface() {
   const [messages, setMessages] = useState([
@@ -56,6 +97,24 @@ export default function ChatbotInterface() {
     details: {} as { [key: string]: string },
   });
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const scrollAreaRef = useRef<HTMLDivElement | null>(null); // Create a ref for the scroll area
+
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  useEffect(() => {
+    // Scroll to the bottom whenever messages change
+    if (scrollAreaRef.current) {
+      scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight;
+    }
+  }, [messages]);
   const [connectionStatus, setConnectionStatus] = useState("disconnected"); // Track connection status
   const [showLegalResources, setShowLegalResources] = useState(false); // Track the visibility of legal resources
 
@@ -118,7 +177,10 @@ export default function ChatbotInterface() {
   const handleSend = async () => {
     if (input.trim()) {
       const userMsg = input;
-      setMessages([...messages, { role: "user", content: userMsg }]);
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { role: "user", content: userMsg },
+      ]);
       setInput("");
 
       try {
@@ -140,8 +202,8 @@ export default function ChatbotInterface() {
         const data = await response.json();
         const botMsg = data.res.msg;
 
-        setMessages((prev) => [
-          ...prev,
+        setMessages((prevMessages) => [
+          ...prevMessages,
           {
             role: "assistant",
             content: botMsg,
@@ -163,8 +225,8 @@ export default function ChatbotInterface() {
         }
       } catch (error) {
         console.error("Error:", error);
-        setMessages((prev) => [
-          ...prev,
+        setMessages((prevMessages) => [
+          ...prevMessages,
           {
             role: "assistant",
             content: `I'm sorry, but I encountered an error while processing your request: ${
@@ -174,6 +236,11 @@ export default function ChatbotInterface() {
             }`,
           },
         ]);
+      }
+
+      // Scroll to the bottom of the scroll area
+      if (scrollAreaRef.current) {
+        scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight;
       }
     }
   };
@@ -259,6 +326,8 @@ export default function ChatbotInterface() {
                     </div>
                   </div>
                 ))}
+                <div ref={messagesEndRef} />{" "}
+                {/* This empty div acts as a reference point for scrolling */}
               </ScrollArea>
             </CardBody>
           </Card>
@@ -330,9 +399,10 @@ export default function ChatbotInterface() {
               </TabsContent>
 
               <TabsContent value="rights-awareness">
-                <h2 className="text-xl font-semibold mb-2">Check Case Status</h2>
-                <CaseStatusChecker
-                isDarkMode={isDarkMode}/>
+                <h2 className="text-xl font-semibold mb-2">
+                  Check Case Status
+                </h2>
+                <CaseStatusChecker isDarkMode={isDarkMode} />
               </TabsContent>
 
               <TabsContent value="legal-resources">
