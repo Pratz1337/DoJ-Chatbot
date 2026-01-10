@@ -40,10 +40,10 @@ The **DoJ-Chatbot** is an AI-powered conversational assistant designed to bridge
 
 ```mermaid
 graph TD
-    A[User Query] --> B(Frontend UI)
+    A[User Query] --> B[Frontend UI]
     B --> C{API Gateway}
     C --> D[Embedding Model]
     D --> E[(Vector Database)]
-    E -- Retrieved Context --> F[LLM (Context + Query)]
+    E -- Retrieved Context --> F[LLM: Context + Query]
     F --> G[Generated Legal Response]
     G --> B
